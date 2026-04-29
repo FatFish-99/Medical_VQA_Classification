@@ -1,0 +1,941 @@
+question,answer,label,question_type,split,inferred_modality
+does this represent infectious process?,yes,1,binary,train,X-ray
+is the vertebro-basilar arterial network viewed in this section?,yes,1,binary,train,X-ray
+is this an ap image?,no,0,binary,train,X-ray
+is the heart displaced?,no,0,binary,train,X-ray
+does the image show pericolonic fat stranding?,yes,1,binary,train,X-ray
+is there any inappropriate air collection in subcutaneous tissue?,no,0,binary,train,X-ray
+is there evidence of a pneumoperitoneum secondary to a perforation?,yes,1,binary,train,X-ray
+is the heart enlarged?,yes,1,binary,train,X-ray
+is the aortic knob widened?,no,0,binary,train,X-ray
+is the size of the spleen normal?,yes,1,binary,train,X-ray
+is the brain tissue ischemic?,yes,1,binary,train,X-ray
+do you see fluid in the left lung?,yes,1,binary,train,X-ray
+is cardiomegaly shown?,yes,1,binary,train,X-ray
+is the occipital lobe present?,no,0,binary,train,X-ray
+would you describe the mass as cystic?,yes,1,binary,train,X-ray
+is the cardiac silhouette enlarged?,no,0,binary,train,X-ray
+was iv contrast given to the patient?,yes,1,binary,train,X-ray
+is the heart size abnormal?,yes,1,binary,train,X-ray
+is there hemorrhage?,no,0,binary,train,X-ray
+is this coronal plane?,yes,1,binary,train,X-ray
+is the cortex atrophied?,no,0,binary,train,X-ray
+are the liver masses growing around the aorta?,no,0,binary,train,X-ray
+does this scan represent an abnormality?,no,0,binary,train,X-ray
+is this a chest radiograph?,yes,1,binary,train,X-ray
+is there contrast material showing air-fluid levels in the small bowel,yes,1,binary,train,X-ray
+does this image display hydrocephalus?,yes,1,binary,train,X-ray
+does the patient have a central line placed?,yes,1,binary,train,X-ray
+does this image show a normal gallbladder?,no,0,binary,train,X-ray
+are adrenal glands present in this image?,no,0,binary,train,X-ray
+are gallstones present?,yes,1,binary,train,X-ray
+is the right kidney at its normal height in the abdomen?,yes,1,binary,train,X-ray
+is a pulmonary mass present?,no,0,binary,train,X-ray
+is the right conal fascia inflammed?,yes,1,binary,train,X-ray
+is the trachea shifted?,no,0,binary,train,X-ray
+is the sigmoid colon visualized at this axial section?,yes,1,binary,train,X-ray
+is this image underexposed?,yes,1,binary,train,X-ray
+is this image a ct scan?,no,0,binary,train,X-ray
+is there evidence of hematoma?,no,0,binary,train,X-ray
+is there high signal intensity in the csf?,yes,1,binary,train,X-ray
+are the ventricles larger than normal?,yes,1,binary,train,X-ray
+is the mass pushing on the midbrain structures?,yes,1,binary,train,X-ray
+is there a pneumothorax?,no,0,binary,train,X-ray
+is there evidence of calcification in the pancreas?,no,0,binary,train,X-ray
+is the width of the cardiac silhouette normal?,no,0,binary,train,X-ray
+is the mass loculated?,yes,1,binary,train,X-ray
+are there fractures on the skull?,no,0,binary,train,X-ray
+is there a pancreatic pseudocsyst?,no,0,binary,train,X-ray
+does this image show edema?,yes,1,binary,train,X-ray
+are there any abnormalities seen in the spleen?,no,0,binary,train,X-ray
+is there lesion to other structures besides the medulla?,no,0,binary,train,X-ray
+are there rib fractures present?,no,0,binary,train,X-ray
+do the lungs appear hyperinflated?,yes,1,binary,train,X-ray
+is there a skull fracture pictured?,no,0,binary,train,X-ray
+was this taken in pa position?,yes,1,binary,train,X-ray
+does this image show midline shift?,yes,1,binary,train,X-ray
+can you appreciate a mass in this image?,yes,1,binary,train,X-ray
+is the liver normal?,no,0,binary,train,X-ray
+is the left hemidiaphragm normal?,yes,1,binary,train,X-ray
+are the costophrenic angles blunted?,no,0,binary,train,X-ray
+is there hydronephrosis?,yes,1,binary,train,X-ray
+is the cerebellum present in the image?,no,0,binary,train,X-ray
+is subcutaneous air present?,no,0,binary,train,X-ray
+is there herniation of the brainstem secondary to the lesion,no,0,binary,train,X-ray
+does the gallbladder appear distended?,yes,1,binary,train,X-ray
+is there no definitive border between the grey matter and white matter in the right temporal lobe?,yes,1,binary,train,X-ray
+is this an axial image?,yes,1,binary,train,X-ray
+is this a ct scan?,no,0,binary,train,X-ray
+are there rib fractures present?,yes,1,binary,train,X-ray
+is pleural effusion present?,no,0,binary,train,X-ray
+are the ventricles smaller than normal?,yes,1,binary,train,X-ray
+is there a skull fracture present?,no,0,binary,train,X-ray
+is there good gray-white matter differentiation?,yes,1,binary,train,X-ray
+are there other abnormalities besides the mass in the temporal horn?,yes,1,binary,train,X-ray
+is lymphadenopathy present?,no,0,binary,train,X-ray
+are the kidneys hyper attenuated?,yes,1,binary,train,X-ray
+does this lesion involve the vascular system?,yes,1,binary,train,X-ray
+is there an air fluid level present?,yes,1,binary,train,X-ray
+is there any hemorrhage?,no,0,binary,train,X-ray
+is the gray-white matter junction altered?,yes,1,binary,train,X-ray
+is the chest x-ray normal?,no,0,binary,train,X-ray
+does this constitute a pulmonary pathology?,yes,1,binary,train,X-ray
+is a pneumothorax present near the right lung field?,yes,1,binary,train,X-ray
+can x rays be used to identify liver lesions?,no,0,binary,train,X-ray
+is the heart in the wrong position?,no,0,binary,train,X-ray
+does the heart look enlarged?,no,0,binary,train,X-ray
+is the trachea midline?,yes,1,binary,train,X-ray
+was contrast used in this image?,yes,1,binary,train,X-ray
+can you see the adrenals?,no,0,binary,train,X-ray
+did this patient sustain physical damage?,no,0,binary,train,X-ray
+is the bowel distended?,no,0,binary,train,X-ray
+has the brainstem herniated?,no,0,binary,train,X-ray
+is there pneumothorax?,no,0,binary,train,X-ray
+is this the small bowel on this image?,yes,1,binary,train,X-ray
+do the kidneys show a high level of contrast enhancement?,yes,1,binary,train,X-ray
+are the cortexes atrophied here?,no,0,binary,train,X-ray
+is this image of a saggital plane?,no,0,binary,train,X-ray
+is this a noncontrast ct?,yes,1,binary,train,X-ray
+is the vertebra fractured?,no,0,binary,train,X-ray
+is this picture abnormal?,yes,1,binary,train,X-ray
+is there evidence of portal venous congestion?,no,0,binary,train,X-ray
+is the lesion enhancing?,yes,1,binary,train,X-ray
+is the medulla swollen?,yes,1,binary,train,X-ray
+is there any blunting of the costophrenic angle(s)?,no,0,binary,train,X-ray
+is the jejunal wall enlarged?,yes,1,binary,train,X-ray
+do you see cardiomegaly?,no,0,binary,train,X-ray
+is this a lateral film?,no,0,binary,train,X-ray
+is there an brain bleed?,no,0,binary,train,X-ray
+are the lesions in the cerebellum?,yes,1,binary,train,X-ray
+did this patient receive iv contrast?,yes,1,binary,train,X-ray
+can you see ventricles?,yes,1,binary,train,X-ray
+is there cortical atrophy?,no,0,binary,train,X-ray
+is there edema in the patient's right temporal lobe?,yes,1,binary,train,X-ray
+is this patient lying supine?,yes,1,binary,train,X-ray
+are brain structures shifted across the midline?,no,0,binary,train,X-ray
+is the image enough to diagnose?,no,0,binary,train,X-ray
+is bowel distension present?,no,0,binary,train,X-ray
+is there evidence of periappendiceal fluid and fat stranding?,yes,1,binary,train,X-ray
+is there infiltrate in the sinuses?,no,0,binary,train,X-ray
+is the descending aortic silhouette of normal size?,yes,1,binary,train,X-ray
+can you appreciate inflammation?,yes,1,binary,train,X-ray
+is this a pa film?,yes,1,binary,train,X-ray
+is this film taken ap?,no,0,binary,train,X-ray
+is the liver parenchyma homogenous?,yes,1,binary,train,X-ray
+is there a pneumothorax present?,no,0,binary,train,X-ray
+is there tracheal deviation?,no,0,binary,train,X-ray
+is iv contrast used?,yes,1,binary,train,X-ray
+is there a clavicle fracture shown in this radiograph?,no,0,binary,train,X-ray
+is the grey/white matter border well differentiated?,yes,1,binary,train,X-ray
+is there evidence of a pneumothorax,no,0,binary,train,X-ray
+has the small bowel perforated?,no,0,binary,train,X-ray
+is there inflammation?,yes,1,binary,train,X-ray
+is the caudate nucleus involved?,yes,1,binary,train,X-ray
+does the image show midline shift?,yes,1,binary,train,X-ray
+is this an image of the brain?,yes,1,binary,train,X-ray
+is there damage to the liver?,no,0,binary,train,X-ray
+are the lower lung fields normal?,yes,1,binary,train,X-ray
+is this a vascular lesion,yes,1,binary,train,X-ray
+is the cardiac contour normal in shape?,yes,1,binary,train,X-ray
+is the mass heterogenous in consistency?,yes,1,binary,train,X-ray
+is the vertebral artery/basilar artery located in this image?,yes,1,binary,train,X-ray
+is there a cyst in the left kidney?,no,0,binary,train,X-ray
+is there any costophrenic angle blunting present?,no,0,binary,train,X-ray
+is there grey-white matter differentiation?,yes,1,binary,train,X-ray
+is there a cavitary lesion?,yes,1,binary,train,X-ray
+is there consolidation in the lungs?,no,0,binary,train,X-ray
+is this normal gallbladder finding?,no,0,binary,train,X-ray
+do the lung markings extend to the periphery?,yes,1,binary,train,X-ray
+is the air under the left hemidiaphragm pathologic?,no,0,binary,train,X-ray
+is there evidence of hilar enlargement?,no,0,binary,train,X-ray
+is there mass shift pathology?,no,0,binary,train,X-ray
+is the cardiac silhouette enlarged?,yes,1,binary,train,X-ray
+is this a noncontrast ct?,yes,1,binary,train,X-ray
+does the left temporal lobe appear normal?,no,0,binary,train,X-ray
+is the heart size normal?,yes,1,binary,train,X-ray
+is the mass enhancing?,no,0,binary,train,X-ray
+is a pleural effusion present?,no,0,binary,train,X-ray
+is this image taken from the top slice of the brain?,no,0,binary,train,X-ray
+are the kidneys hyper attenuated?,yes,1,binary,train,X-ray
+is there a pneumothorax present?,no,0,binary,train,X-ray
+does the mass affect neighboring structure?,yes,1,binary,train,X-ray
+are both lungs abnormally inflated?,no,0,binary,train,X-ray
+is this image abnormal?,yes,1,binary,train,X-ray
+is the celiac trunk visualized and patent?,yes,1,binary,train,X-ray
+can you diagnose a pericardial effusion from this image?,no,0,binary,train,X-ray
+is the lung parenchyma well visualized?,yes,1,binary,train,X-ray
+can a pleural effusion be appreciated on the right side?,no,0,binary,train,X-ray
+is there contrast in the appendix?,no,0,binary,train,X-ray
+are there abnormalities seen in the lungs?,yes,1,binary,train,X-ray
+does this plane of section include the gastric cardia?,yes,1,binary,train,X-ray
+are there air fluid levels present in the small bowel?,yes,1,binary,train,X-ray
+does the pancreatic head appear enlarged?,yes,1,binary,train,X-ray
+are both kidneys visible?,yes,1,binary,train,X-ray
+are the brain ventricles visible?,no,0,binary,train,X-ray
+can the white and gray matter be differentiated?,yes,1,binary,train,X-ray
+does the heart appear enlarged?,yes,1,binary,train,X-ray
+is the celiac trunk open?,yes,1,binary,train,X-ray
+is the corpus callosum involved?,yes,1,binary,train,X-ray
+is the heart greater than 50% of the chest diameter,yes,1,binary,train,X-ray
+is the lesion uniform in density?,no,0,binary,train,X-ray
+is there evidence of a right apical pneumothorax on this chest x-ray?,yes,1,binary,train,X-ray
+was contrast used?,yes,1,binary,train,X-ray
+are there gallstones?,yes,1,binary,train,X-ray
+is there involvement of the temporal lobes?,no,0,binary,train,X-ray
+is there pleural thickening in the r lung?,yes,1,binary,train,X-ray
+is a pleural effusion present?,no,0,binary,train,X-ray
+is the heart enlarged?,yes,1,binary,train,X-ray
+are any ribs in the image fractured?,no,0,binary,train,X-ray
+is there cardiomegaly?,yes,1,binary,train,X-ray
+is the left kidney affected?,no,0,binary,train,X-ray
+is the cerebellum in view?,yes,1,binary,train,X-ray
+is the small bowel filled with contrast?,yes,1,binary,train,X-ray
+is there sign of perforated bowel?,no,0,binary,train,X-ray
+are the vertebral arteries in view?,yes,1,binary,train,X-ray
+is there cardiomegaly?,no,0,binary,train,X-ray
+is the vertebrae fractured?,no,0,binary,train,X-ray
+is there ventricular enlargement?,no,0,binary,train,X-ray
+is this patient intubated?,no,0,binary,train,X-ray
+is this a pa film?,yes,1,binary,train,X-ray
+is this a saggital view of the brain?,no,0,binary,train,X-ray
+is the left fifth rib broken?,no,0,binary,train,X-ray
+are the orbits in view of this image?,yes,1,binary,train,X-ray
+is the trachea midline?,yes,1,binary,train,X-ray
+is this an anterior-posterior image,no,0,binary,train,X-ray
+is the liver abnormal?,no,0,binary,train,X-ray
+is there increased airway wall thickening of the bilateral bases?,yes,1,binary,train,X-ray
+are there more than 5 enlarged (>1 cm) lymph nodes around the stomach,yes,1,binary,train,X-ray
+does the width of the heart exceed more than half of the thorax?,no,0,binary,train,X-ray
+does this image display the contents of the abdomen?,yes,1,binary,train,X-ray
+is the liver cirrhotic?,yes,1,binary,train,X-ray
+is there a mass in the right hilum?,no,0,binary,train,X-ray
+are the ventricles symmetrical?,no,0,binary,train,X-ray
+is there ring-enhancement?,yes,1,binary,train,X-ray
+do we see diffuse cerebral edema in this mri?,no,0,binary,train,X-ray
+is there fluid in the lungs?,no,0,binary,train,X-ray
+is there evidence of mesenteric lymphadenopathy?,yes,1,binary,train,X-ray
+is there a cyst in the right kidney?,no,0,binary,train,X-ray
+is the aorta abnormally wide?,no,0,binary,train,X-ray
+is there bowel perforation present?,no,0,binary,train,X-ray
+is the mass enhancing?,no,0,binary,train,X-ray
+is the aorta encompassed by the mass?,no,0,binary,train,X-ray
+is there fat stranding around the appendix?,yes,1,binary,train,X-ray
+is there any other alteration in the image?,no,0,binary,train,X-ray
+is the right vertebral artery normal?,no,0,binary,train,X-ray
+are the costophrenic angles sharp?,yes,1,binary,train,X-ray
+is there tortuosity of the descending aorta?,yes,1,binary,train,X-ray
+is the gallbladder wall thickened?,yes,1,binary,train,X-ray
+are there multiple septations within the cyst?,yes,1,binary,train,X-ray
+is there blunting of the sulci?,yes,1,binary,train,X-ray
+is there fat stranding?,no,0,binary,train,X-ray
+can you see intraperitoneal bleeding in this ct?,no,0,binary,train,X-ray
+does this patient have a pneumothorax?,yes,1,binary,train,X-ray
+is there blurring of the grey-white matter junction?,no,0,binary,train,X-ray
+is this a kub film?,no,0,binary,train,X-ray
+are there any pulmonary findings?,no,0,binary,train,X-ray
+is there edema present near the lesion?,yes,1,binary,train,X-ray
+does the mass have a smooth appearing border?,yes,1,binary,train,X-ray
+are the kidneys normal?,yes,1,binary,train,X-ray
+is the image an ct scan?,no,0,binary,train,X-ray
+is the aorta visualized?,yes,1,binary,train,X-ray
+is the left renal cyst uniform?,yes,1,binary,train,X-ray
+is there an aortic aneurysm?,no,0,binary,train,X-ray
+is the image normal?,no,0,binary,train,X-ray
+is the right costophrenic angle easily visualized?,no,0,binary,train,X-ray
+is there evidence of a small bowel obstruction with perforated viscus on this ct?,yes,1,binary,train,X-ray
+is the skull fractured?,no,0,binary,train,X-ray
+is this image abnormal?,yes,1,binary,train,X-ray
+is the lesion in the image enhancing?,no,0,binary,train,X-ray
+is this an axial image?,yes,1,binary,train,X-ray
+is there no evidence of any hypo- or hyperattenuations located in the liver?,yes,1,binary,train,X-ray
+are the clavicles fractured?,no,0,binary,train,X-ray
+is this confirmed appendicitis?,no,0,binary,train,X-ray
+is there evidence of pneumoperitoneum?,no,0,binary,train,X-ray
+is there a pneumothorax present?,yes,1,binary,train,X-ray
+does the right kidney show signs of hydronephrosis?,no,0,binary,train,X-ray
+is the pelvis of the left kidney dilated?,no,0,binary,train,X-ray
+is the stomach dilated?,no,0,binary,train,X-ray
+is there an ng tube present?,yes,1,binary,train,X-ray
+is the image in the axial plane?,yes,1,binary,train,X-ray
+are the findings normal?,yes,1,binary,train,X-ray
+are there >5 lymph nodes located near the stomach?,yes,1,binary,train,X-ray
+is a pneumothorax present?,no,0,binary,train,X-ray
+is the heart size abnormal,no,0,binary,train,X-ray
+are the hemidiaphragms flattened?,no,0,binary,train,X-ray
+is the celiac trunk visualized?,yes,1,binary,train,X-ray
+is there mass effect?,no,0,binary,train,X-ray
+is there a pneumothorax seen in the above image?,no,0,binary,train,X-ray
+is there midline shift in this image?,yes,1,binary,train,X-ray
+is the cecum dilated,yes,1,binary,train,X-ray
+is there evidence of calcification in the mass?,yes,1,binary,train,X-ray
+is the size of the pancreatic head large?,yes,1,binary,train,X-ray
+is the trachea midline?,yes,1,binary,train,X-ray
+is there evidence of a mass lesion at the right hilum?,no,0,binary,train,X-ray
+is there a pneumothorax?,no,0,binary,train,X-ray
+is this an anterior posterior image?,no,0,binary,train,X-ray
+is the heart border normal?,no,0,binary,train,X-ray
+is the opacity near the left lung apex pathologic?,no,0,binary,train,X-ray
+is this in the pa plane?,yes,1,binary,train,X-ray
+is this patient intubated?,no,0,binary,train,X-ray
+is the portal vein engorged?,no,0,binary,train,X-ray
+is there a skull fracture?,no,0,binary,train,X-ray
+is there ascites?,no,0,binary,train,X-ray
+is there a pleural effusion present?,no,0,binary,train,X-ray
+is the stomach visualized here?,no,0,binary,train,X-ray
+are feces located in the colon?,yes,1,binary,train,X-ray
+is this a study of the chest?,yes,1,binary,train,X-ray
+is the liver abnormal?,no,0,binary,train,X-ray
+is there shifting of structures across the middle?,no,0,binary,train,X-ray
+does this image show heart failure?,yes,1,binary,train,X-ray
+is there any hemorrhage?,no,0,binary,train,X-ray
+is cardiomegaly present?,no,0,binary,train,X-ray
+was contrast used with this image?,yes,1,binary,train,X-ray
+are nodular calcifications present in the lungs?,no,0,binary,train,X-ray
+is the diaphragm obscured?,no,0,binary,train,X-ray
+is the mass calcified?,yes,1,binary,train,X-ray
+is the heart contour a mirror image of normal?,yes,1,binary,train,X-ray
+is the diaphragm clearly visualized on both sides?,yes,1,binary,train,X-ray
+is there a mass?,yes,1,binary,train,X-ray
+does the r vertebral artery appear normal?,no,0,binary,train,X-ray
+is there decreased aeration at the apex?,yes,1,binary,train,X-ray
+is there bilateral hilar enlargement?,yes,1,binary,train,X-ray
+do you suspect a primary brain process?,no,0,binary,train,X-ray
+is there air-fluid levels?,yes,1,binary,train,X-ray
+are the colon walls thickened?,yes,1,binary,train,X-ray
+is a noncontrast ct the first imaging test for a suspected brain bleed?,yes,1,binary,train,X-ray
+is the celiac trunk able to be visualized in this patient and is it open?,yes,1,binary,train,X-ray
+are air fluid levels depicted in this image?,yes,1,binary,train,X-ray
+is there pericolic fat stranding?,yes,1,binary,train,X-ray
+is the heart enlarged?,no,0,binary,train,X-ray
+are there any bone fractures present?,no,0,binary,train,X-ray
+is there any presence of tracheal deviation?,no,0,binary,train,X-ray
+are there any consolidations present in the lungs?,no,0,binary,train,X-ray
+does the pathology involve the cv system,yes,1,binary,train,X-ray
+is this image abnormal?,yes,1,binary,train,X-ray
+is there ectatic or aneurysmal enlargement of the abdominal aorta?,no,0,binary,train,X-ray
+are the branches of the superior mesenteric arteries hyper attenuated?,yes,1,binary,train,X-ray
+is there a pneumothorax?,no,0,binary,train,X-ray
+can you see kidneys in this image,yes,1,binary,train,X-ray
+is the celiac trunk patent?,yes,1,binary,train,X-ray
+is the bowel perforated?,no,0,binary,train,X-ray
+is there perinephric fat stranding?,yes,1,binary,train,X-ray
+are the findings normal?,no,0,binary,train,X-ray
+is there a fracture in the vertebrae seen?,no,0,binary,train,X-ray
+does this image show a tension pneumothorax?,no,0,binary,train,X-ray
+is this a pa film?,yes,1,binary,train,X-ray
+is a skull fracture present?,no,0,binary,train,X-ray
+is the mass hemorrhagic?,no,0,binary,train,X-ray
+is there a shift of midline structures?,yes,1,binary,train,X-ray
+is the gallbladder enlarged?,yes,1,binary,train,X-ray
+are the common ileac arteries and veins patent in this section?,yes,1,binary,train,X-ray
+is the heart enlarged?,no,0,binary,train,X-ray
+is there evidence of mediastinal shift?,no,0,binary,train,X-ray
+is there a midline shift?,no,0,binary,train,X-ray
+is a pneumothorax present in this image?,no,0,binary,train,X-ray
+is the mass varied?,yes,1,binary,train,X-ray
+is pericholecystic inflammation present?,yes,1,binary,train,X-ray
+is there a mass demonstrated?,yes,1,binary,train,X-ray
+is there evidence of an abdominal hernia?,no,0,binary,train,X-ray
+is there a right-sided pleural effusion?,no,0,binary,train,X-ray
+are the air fluid levels located in colon?,yes,1,binary,train,X-ray
+is there any lesion in the ventricles?,yes,1,binary,train,X-ray
+is the celiac trunk able to be visualized in this patient?,yes,1,binary,train,X-ray
+are the lymph nodes enlarged,yes,1,binary,train,X-ray
+is there fat stranding shown in this image?,yes,1,binary,train,X-ray
+will medical therapy be enough?,yes,1,binary,train,X-ray
+does the heart look enlarged?,no,0,binary,train,X-ray
+did the patient ingest contrast prior to taking this image?,yes,1,binary,train,X-ray
+is the gallbladder wall enhanced by contrast?,yes,1,binary,train,X-ray
+is there a fracture?,no,0,binary,train,X-ray
+do the two findings have the same etiology?,yes,1,binary,train,X-ray
+is there a fracture on the left 5th rib?,no,0,binary,train,X-ray
+is this an image of the cerebellum,yes,1,binary,train,X-ray
+is the image normal?,no,0,binary,train,X-ray
+is there a subarachnoid bleed in the image?,no,0,binary,train,X-ray
+is there contrast used?,no,0,binary,train,X-ray
+is there evidence of ascites?,no,0,binary,train,X-ray
+can you see both kidneys in this image?,yes,1,binary,train,X-ray
+is the appendix seen in this image ruptured?,no,0,binary,train,X-ray
+does the lesion above enhance?,no,0,binary,train,X-ray
+is the et tube properly placed?,yes,1,binary,train,X-ray
+is this a cyst in the left lung?,no,0,binary,train,X-ray
+is this a mri image?,yes,1,binary,train,X-ray
+was this image taken via mri?,no,0,binary,train,X-ray
+does this patient have an endotracheal tube placed?,no,0,binary,train,X-ray
+can ct be used to assess soft tissues?,yes,1,binary,train,X-ray
+are any ventricles visualized on this image?,yes,1,binary,train,X-ray
+are any organs besides the intestines present in this image?,yes,1,binary,train,X-ray
+are both kidneys visualized?,yes,1,binary,train,X-ray
+is there a fracture of the left humerus?,no,0,binary,train,X-ray
+is the pancreas calcified?,no,0,binary,train,X-ray
+is this image normal?,no,0,binary,train,X-ray
+is the brain atrophied or shrunk?,no,0,binary,train,X-ray
+did the patient have a cholecystectomy?,yes,1,binary,train,X-ray
+is the skull fractured?,no,0,binary,train,X-ray
+is the mass compressing the inferior vena cava?,no,0,binary,train,X-ray
+can the cerebral cortex be visualized at this level?,no,0,binary,train,X-ray
+is the finding normal?,no,0,binary,train,X-ray
+do the left and right middle cerebral arteries appear patent on this section?,yes,1,binary,train,X-ray
+can you see all of the ribs on the left side?,no,0,binary,train,X-ray
+is the lesion ring enhancing?,yes,1,binary,train,X-ray
+is there anything wrong with the lungs?,no,0,binary,train,X-ray
+is fat stranding depicted in this image?,no,0,binary,train,X-ray
+does there seem to be a mass effect?,yes,1,binary,train,X-ray
+was this patient given iv contrast?,yes,1,binary,train,X-ray
+is there mass effect seen on this image?,yes,1,binary,train,X-ray
+is there a pleural effusion?,no,0,binary,train,X-ray
+is a pneuomothorax present?,no,0,binary,train,X-ray
+is the stomach wall thickened?,yes,1,binary,train,X-ray
+is there a rib fracture?,no,0,binary,train,X-ray
+are the pulmonary arteries enlarged?,yes,1,binary,train,X-ray
+is this an infiltrating mass?,yes,1,binary,train,X-ray
+is the 4th ventricle present in this image?,no,0,binary,train,X-ray
+can you see the kidneys,yes,1,binary,train,X-ray
+is there thickening of the jejunum,yes,1,binary,train,X-ray
+is this a mri of the chest?,no,0,binary,train,X-ray
+is there swelling of the grey matter?,yes,1,binary,train,X-ray
+is a pneumothorax present?,yes,1,binary,train,X-ray
+are abdominal fat pads prominently visualized?,no,0,binary,train,X-ray
+is there fluid accumulation near the lesion?,yes,1,binary,train,X-ray
+is this an image of normal physiology?,no,0,binary,train,X-ray
+is it possible to see the cerebellum in this image?,no,0,binary,train,X-ray
+is there a vertebral fracture?,no,0,binary,train,X-ray
+is subdiaphragmatic free air present?,no,0,binary,train,X-ray
+is there atrophy of the brain?,yes,1,binary,train,X-ray
+does this image show a normal gallbladder?,yes,1,binary,train,X-ray
+have brain structures crossed the midline of the brain?,yes,1,binary,train,X-ray
+is this image sufficient for a diagnosis?,no,0,binary,train,X-ray
+are the cystic and common bile ducts dilated?,yes,1,binary,train,X-ray
+"besides the mass in the temporal horn, are there other enhancements in the image?",yes,1,binary,train,X-ray
+is this an mri image?,no,0,binary,train,X-ray
+is there thickening of the peritoneum?,yes,1,binary,train,X-ray
+does the lesion demonstrate ring enhancement?,yes,1,binary,train,X-ray
+has the left lung collapsed?,yes,1,binary,train,X-ray
+is the heart abnormal?,yes,1,binary,train,X-ray
+is anything wrong in the image?,yes,1,binary,train,X-ray
+is there pathology of the gallbladder?,no,0,binary,train,X-ray
+do you see a cavitary lesion in this chest xray?,yes,1,binary,train,X-ray
+are the basal ganglia enlarged?,no,0,binary,train,X-ray
+is a subarachnoid bleed present?,no,0,binary,train,X-ray
+are the ventricles enlarged?,no,0,binary,train,X-ray
+is there air in the bowel?,yes,1,binary,train,X-ray
+is there pneumoperitoneum?,no,0,binary,train,X-ray
+are the vertebral arteries patent in this section?,yes,1,binary,train,X-ray
+is the abdomen distended?,no,0,binary,train,X-ray
+is there presence of pleural effusions in this patient?,no,0,binary,train,X-ray
+notice any abnormality in the kidneys?,no,0,binary,train,X-ray
+is there a calcification on the upper left lobe?,no,0,binary,train,X-ray
+is there fat stranding present?,no,0,binary,train,X-ray
+is there a bowel obstrution,yes,1,binary,train,X-ray
+is the lesion infiltrating?,no,0,binary,train,X-ray
+does the l sided lesion enhance?,yes,1,binary,train,X-ray
+is there evidence of large calcified lesions in the lung fields?,no,0,binary,train,X-ray
+is there air in the lesion?,no,0,binary,train,X-ray
+is the gallbladder distended?,no,0,binary,train,X-ray
+is the aorta visible in this section?,yes,1,binary,train,X-ray
+is this a solitary nodule?,yes,1,binary,train,X-ray
+are there lungs free of consolidation?,yes,1,binary,train,X-ray
+is the brain scan normal?,no,0,binary,train,X-ray
+is subcutaneous air present?,no,0,binary,train,X-ray
+is there evidence of cardiomegaly?,no,0,binary,train,X-ray
+is this a ct image?,yes,1,binary,train,X-ray
+is cardiomegaly present?,yes,1,binary,train,X-ray
+is there cardiomegaly?,yes,1,binary,train,X-ray
+is there enlargement of the abdominal aorta on this image?,no,0,binary,train,X-ray
+is the renal system dilated?,yes,1,binary,train,X-ray
+is there a pneumothorax?,no,0,binary,train,X-ray
+are the ventricles the same size?,no,0,binary,train,X-ray
+is this an anoxic injury?,yes,1,binary,train,X-ray
+is the heart enlarged?,no,0,binary,train,X-ray
+can a diagnosis of appendicitis be made from this image?,no,0,binary,train,X-ray
+are there normal number of kidneys?,yes,1,binary,train,X-ray
+does this ct use iv contrast material?,no,0,binary,train,X-ray
+are there increased interstitial markings?,yes,1,binary,train,X-ray
+any abnormal findings in the lower lung fields?,no,0,binary,train,X-ray
+is there a fracture of the skull?,no,0,binary,train,X-ray
+are the patients' ribs symmetric on both sides?,no,0,binary,train,X-ray
+is/are the mass located near/in the mid brain?,yes,1,binary,train,X-ray
+is the heart too big?,no,0,binary,train,X-ray
+is there contrast in the colonic lumen?,yes,1,binary,train,X-ray
+does this patient have multiple lesions in their chest?,no,0,binary,train,X-ray
+is there oral contrast located in the colon?,yes,1,binary,train,X-ray
+are the ventricles normal?,no,0,binary,train,X-ray
+has the gallbladder been removed?,yes,1,binary,train,X-ray
+is there tracheal deviation?,no,0,binary,train,X-ray
+is there right hemidiaphragm elevation?,yes,1,binary,train,X-ray
+is there an effusion present on the right-side?,no,0,binary,train,X-ray
+was the patient given oral contrast?,yes,1,binary,train,X-ray
+is the left renal pelvis dilated?,no,0,binary,train,X-ray
+is there presence of any costophrenic angle blunting?,no,0,binary,train,X-ray
+are there calcifications in the cerebral arteries?,yes,1,binary,train,X-ray
+can you view the colon in this image?,yes,1,binary,train,X-ray
+do the lungs appear hyperinflated?,yes,1,binary,train,X-ray
+is the aortic arch shape abnormal?,no,0,binary,train,X-ray
+does this chest x-ray show signs of diffuse opacities in both right and left lung fields?,yes,1,binary,train,X-ray
+is there a vertebral fracture?,no,0,binary,train,X-ray
+is there leakage of contrast?,no,0,binary,train,X-ray
+is there evidence of herniation of the small bowel into the abdominal wall?,no,0,binary,train,X-ray
+is subdiaphragmatic air present on the left side?,no,0,binary,train,X-ray
+are the cerebellar infarcts hyper attenuated?,yes,1,binary,train,X-ray
+is this a pa film?,yes,1,binary,train,X-ray
+is there a pelvic fracture?,no,0,binary,train,X-ray
+is this a chest x-ray?,yes,1,binary,train,X-ray
+is the costophrenic angle blunted?,yes,1,binary,train,X-ray
+is there evidence of hemorrhage?,no,0,binary,train,X-ray
+is there a pneumothorax present?,no,0,binary,train,X-ray
+did this patient receive iv contrast?,yes,1,binary,train,X-ray
+is there symmetry of the patient's ribs on both sides?,no,0,binary,train,X-ray
+is there acute blood present on this head ct?,no,0,binary,train,X-ray
+is there swelling of the choroid fissure?,no,0,binary,train,X-ray
+is the heart dilated?,no,0,binary,train,X-ray
+is the plane of section transverse?,yes,1,binary,train,X-ray
+are calcifications present?,yes,1,binary,train,X-ray
+is there enlargement of the ventricles,yes,1,binary,train,X-ray
+is there intrahepatic ductal dilatation?,yes,1,binary,train,X-ray
+is the mediastinum widened?,yes,1,binary,train,X-ray
+is there a subdural hematoma?,no,0,binary,train,X-ray
+are the ribs broken?,no,0,binary,train,X-ray
+can you visualize the 4th ventricle?,no,0,binary,train,X-ray
+are there abnormalities?,yes,1,binary,train,X-ray
+is there any shifting on the path of the trachea?,no,0,binary,train,X-ray
+is the trachea deviated?,no,0,binary,train,X-ray
+do the masses contain calcification?,yes,1,binary,train,X-ray
+is the mass calcified?,no,0,binary,train,X-ray
+is the spleen normal size?,yes,1,binary,train,X-ray
+is there evidence of pneumothorax?,no,0,binary,train,X-ray
+are patchy infiltrates depicted?,yes,1,binary,train,X-ray
+are the liver 	splee n	stomac h	and esophagus all visualized in this image?,yes,1,binary,train,X-ray
+is this process bilateral?,yes,1,binary,train,X-ray
+is the gyral enhancement?,yes,1,binary,train,X-ray
+is the heart enlarged?,no,0,binary,train,X-ray
+does this patient have any fractured ribs?,no,0,binary,train,X-ray
+is there blood present?,no,0,binary,train,X-ray
+is this a saggital brain section?,no,0,binary,train,X-ray
+is the pancreas edematous?,yes,1,binary,train,X-ray
+is the bowel dilated?,yes,1,binary,train,X-ray
+is the skull fractured?,no,0,binary,train,X-ray
+is there hyperinflation of the lung(s)?,no,0,binary,train,X-ray
+is there an interstitial lung process?,yes,1,binary,train,X-ray
+is there any lesion to bone structures?,no,0,binary,train,X-ray
+is the midbrain identified in this section?,yes,1,binary,train,X-ray
+is there restricted diffusion?,no,0,binary,train,X-ray
+is there a nodule in the left lung?,no,0,binary,train,X-ray
+is there deviation in the trachea?,no,0,binary,train,X-ray
+are any of the ribs fractured?,no,0,binary,train,X-ray
+is this image enhanced by contrast?,yes,1,binary,train,X-ray
+is cerebral cortex present in this image?,no,0,binary,train,X-ray
+is the heart enlarged?,no,0,binary,train,X-ray
+can a pulmonary mass be appreciated?,no,0,binary,train,X-ray
+are the kidneys visualized?,yes,1,binary,train,X-ray
+is there lymphadenopathy?,no,0,binary,train,X-ray
+is the trachea midline?,yes,1,binary,train,X-ray
+does this patient have cardiomegaly?,no,0,binary,train,X-ray
+any observed degenerative changes in the vertebral body?,no,0,binary,train,X-ray
+is there cardiomegaly?,no,0,binary,train,X-ray
+is the mass a cyst?,yes,1,binary,train,X-ray
+are the ventricles unaltered?,no,0,binary,train,X-ray
+are the lesions only in one lobe?,no,0,binary,train,X-ray
+is there a skull fracture?,no,0,binary,train,X-ray
+was contrast used?,yes,1,binary,train,X-ray
+is there loculation of this lesion?,no,0,binary,train,X-ray
+is the trachea midline?,yes,1,binary,train,X-ray
+is there mass effect?,yes,1,binary,train,X-ray
+is there fat in these masses?,yes,1,binary,train,X-ray
+is this lesion ring enhancing?,yes,1,binary,train,X-ray
+is the descending aortic silhouette of normal contour and size?,yes,1,binary,train,X-ray
+is there air in the peritoneal cavity?,yes,1,binary,train,X-ray
+are the lungs normal appearing?,no,0,binary,train,X-ray
+is this film properly exposed?,yes,1,binary,train,X-ray
+is there ascites present?,yes,1,binary,train,X-ray
+was the patient given iv contrast?,yes,1,binary,train,X-ray
+is the heart clearly visible?,no,0,binary,train,X-ray
+does the csf have high signal intensity?,yes,1,binary,train,X-ray
+is this an mri?,yes,1,binary,train,X-ray
+is there a midline shift?,no,0,binary,train,X-ray
+does a blocked alveoli cause a v/q mismatch?,yes,1,binary,train,X-ray
+is a fracture present?,no,0,binary,train,X-ray
+is this a normal image?,no,0,binary,train,X-ray
+is this a sagittal plane image?,no,0,binary,train,X-ray
+can this plane detect an aortic aneurysm 	if present?,yes,1,binary,train,X-ray
+are the common iliac vasculature open?,yes,1,binary,train,X-ray
+is the stomach filled?,yes,1,binary,train,X-ray
+can you appreciate a pleural effusion anywhere?,no,0,binary,train,X-ray
+is this image best taken on expiration?,no,0,binary,train,X-ray
+are the sinuses abnormal?,no,0,binary,train,X-ray
+is this an axial plane,yes,1,binary,train,X-ray
+is the abdominal aorta large in size?,no,0,binary,train,X-ray
+is this lesion loculated,no,0,binary,train,X-ray
+is there tracheal deviation?,no,0,binary,train,X-ray
+is there hilar lymphadenopathy?,yes,1,binary,train,X-ray
+is cortical atrophy present?,no,0,binary,train,X-ray
+is there calcification,yes,1,binary,train,X-ray
+is it contrast these hyperintensities in the intestines?,yes,1,binary,train,X-ray
+is this image plane taken inferior to the liver?,yes,1,binary,train,X-ray
+do bones appear lighter on this image's modality?,yes,1,binary,train,X-ray
+is this ct scan enhanced by iv contrast?,yes,1,binary,train,X-ray
+is this an axial image?,no,0,binary,train,X-ray
+is there an abnormal lesion?,yes,1,binary,train,X-ray
+was this taken with good x ray penetration,yes,1,binary,train,X-ray
+do you always recommend using both iv and oral contrast?,no,0,binary,train,X-ray
+is there free air under the diaphragm?,no,0,binary,train,X-ray
+is there any lesion in the left kidney,no,0,binary,train,X-ray
+is this a pa image?,yes,1,binary,train,X-ray
+was the patient positioned inappropriately?,no,0,binary,train,X-ray
+is there blunting of the costovertebral angles?,no,0,binary,train,X-ray
+can the kidneys be visualized in this ct scan?,yes,1,binary,train,X-ray
+are both kidneys in view?,yes,1,binary,train,X-ray
+is there mass effect?,yes,1,binary,train,X-ray
+is this a contrast enhanced image?,yes,1,binary,train,X-ray
+is the mass in the pancreas enhancing?,no,0,binary,train,X-ray
+is there any bleeding in this patient's brain?,no,0,binary,train,X-ray
+is the patient lying down?,yes,1,binary,train,X-ray
+is this in the coronal plane?,no,0,binary,train,X-ray
+are there air-fluid levels present on this ct radiograph?,yes,1,binary,train,X-ray
+is this an axial plane image?,yes,1,binary,train,X-ray
+are the findings normal?,no,0,binary,train,X-ray
+is the heart enlarged?,yes,1,binary,train,X-ray
+is inflammation present at the right conal fascia?,yes,1,binary,train,X-ray
+is the mass heterogenous?,yes,1,binary,train,X-ray
+is the liver normal?,yes,1,binary,train,X-ray
+can you see the abdominal fat pads?,no,0,binary,train,X-ray
+is there air under the diaphragm?,no,0,binary,train,X-ray
+are the kidneys in this image abnormal?,yes,1,binary,train,X-ray
+is there enhancement of the lesion?,no,0,binary,train,X-ray
+are regions of the brain infarcted?,yes,1,binary,train,X-ray
+are structures associated with the midbrain located in this image?,yes,1,binary,train,X-ray
+do the ventricles have blood in them?,yes,1,binary,train,X-ray
+is this a t2 weighted image?,yes,1,binary,train,X-ray
+are the branches of the superior mesenteric arteries filled with contrast?,yes,1,binary,train,X-ray
+is there evidence of intussusception on the right side?,no,0,binary,train,X-ray
+is there bulging of structures in this image?,yes,1,binary,train,X-ray
+is the heart contour backwards?,yes,1,binary,train,X-ray
+can a diagnosis or impression be made in this plane?,yes,1,binary,train,X-ray
+can you appreciate a shift of the midline?,yes,1,binary,train,X-ray
+is there fluid in the anterior abdominal wall?,no,0,binary,train,X-ray
+is this image of the thorax?,yes,1,binary,train,X-ray
+are the lungs normal?,no,0,binary,train,X-ray
+is there a normal contour of the heart?,yes,1,binary,train,X-ray
+is there a widened mediastium?,yes,1,binary,train,X-ray
+was this image taken from a superior-most section of the brain?,no,0,binary,train,X-ray
+is a pleural effusion present?,no,0,binary,train,X-ray
+is there adequate inspiration?,yes,1,binary,train,X-ray
+is the heart size abnormal?,no,0,binary,train,X-ray
+is fat stranding present?,no,0,binary,train,X-ray
+is there bleeding in the brain?,no,0,binary,train,X-ray
+is there gastric fullness?,yes,1,binary,train,X-ray
+is there free air under the left diaphragm?,no,0,binary,train,X-ray
+are you able to see the ventricles in this image?,no,0,binary,train,X-ray
+is the cerebellum seen on this axial section?,no,0,binary,train,X-ray
+can this patient be managed with medical therapy alone?,no,0,binary,train,X-ray
+is there restricted diffusion?,no,0,binary,train,X-ray
+is the patient's vertebral body indicative of normal aging?,yes,1,binary,train,X-ray
+is the spleen present?,yes,1,binary,train,X-ray
+is mass effect obvious?,yes,1,binary,train,X-ray
+can you appreciate a pleural effusion?,no,0,binary,train,X-ray
+is the right costophrenic angle sharp?,no,0,binary,train,X-ray
+are the enhanced muscles also enlarged?,yes,1,binary,train,X-ray
+is there a midline shift of the cerebral parenchyma?,no,0,binary,train,X-ray
+are there abnormal findings?,yes,1,binary,train,X-ray
+is there no evidence of blunting of the costophrenic angles?,yes,1,binary,train,X-ray
+was contrast used to take this image?,yes,1,binary,train,X-ray
+is the trachea deviated from midline?,no,0,binary,train,X-ray
+is the mass cystic?,yes,1,binary,train,X-ray
+is there a shift of midline structures?,no,0,binary,train,X-ray
+is this a plain film xray?,yes,1,binary,train,X-ray
+are there abnormal findings on this image?,yes,1,binary,train,X-ray
+is there blunting of the left costophrenic angle?,yes,1,binary,train,X-ray
+is there evidence of air fluid levels in the patient's bowel?,yes,1,binary,train,X-ray
+is this a ring enhancing lesion?,no,0,binary,train,X-ray
+is the heart shadow abnormally large?,no,0,binary,train,X-ray
+does the appendix appear normal?,no,0,binary,train,X-ray
+is a pleural effusion present?,no,0,binary,train,X-ray
+any tracheal deviation present?,no,0,binary,train,X-ray
+is intrahepatic ductal dilatation present?,yes,1,binary,train,X-ray
+is the peritoneum thickened?,yes,1,binary,train,X-ray
+is the cyst complex?,yes,1,binary,train,X-ray
+is the saggital plane?,no,0,binary,train,X-ray
+are the soft tissue densities in the left hilum equivalent in size to the soft tissue densities in the right hilum?,no,0,binary,train,X-ray
+does this cxr display pneumoperitoneum?,no,0,binary,train,X-ray
+was contrast applied?,no,0,binary,train,X-ray
+is there evidence of subcutaneous air collection?,no,0,binary,train,X-ray
+are the clavicles broken?,no,0,binary,train,X-ray
+do you suspect a physical injury?,no,0,binary,train,X-ray
+are there cilia present at the level of alveoli?,no,0,binary,train,X-ray
+is air visible in the bowels?,yes,1,binary,train,X-ray
+is anything wrong in this image?,yes,1,binary,train,X-ray
+is there anything abnormal about the heart size?,yes,1,binary,train,X-ray
+is this an axial plane image,yes,1,binary,train,X-ray
+is this image in the transverse plane?,yes,1,binary,train,X-ray
+was the arterial contrast phase selected?,yes,1,binary,train,X-ray
+is the bowel perforated?,no,0,binary,train,X-ray
+is this patient healthy?,no,0,binary,train,X-ray
+is the heart enlarged?,yes,1,binary,train,X-ray
+are there any fractures present?,no,0,binary,train,X-ray
+are the lungs affected?,no,0,binary,train,X-ray
+is there bone in the top of the image?,no,0,binary,train,X-ray
+is there fluid in the left lung?,yes,1,binary,train,X-ray
+is this an abnormal film?,yes,1,binary,train,X-ray
+is there wall enhancement of the gb?,yes,1,binary,train,X-ray
+does the skull appear fractured?,no,0,binary,train,X-ray
+is the appendix seen in this image inflamed?,yes,1,binary,train,X-ray
+are these masses encompassing the aorta?,no,0,binary,train,X-ray
+was iv contrast given to the patient?,yes,1,binary,train,X-ray
+is there dilation of the bowel?,yes,1,binary,train,X-ray
+is the diaphragm flattened on either side,no,0,binary,train,X-ray
+are the lungs hyperinflated?,yes,1,binary,train,X-ray
+is this a normal image?,no,0,binary,train,X-ray
+are there any abnormalities with the shape of the aortic arch?,no,0,binary,train,X-ray
+is there evidence of fluid in the peritoneal cavity?,no,0,binary,train,X-ray
+are lung opacities noted?,no,0,binary,train,X-ray
+is there bleeding present in this patient's brain?,no,0,binary,train,X-ray
+do you see dependent layering in the occipital horns of the lateral ventricles?,yes,1,binary,train,X-ray
+are the sulci visible in this image?,no,0,binary,train,X-ray
+is the gall bladder enlarged?,no,0,binary,train,X-ray
+are the lateral ventricles viewed in this section?,yes,1,binary,train,X-ray
+is there an intussusception present?,no,0,binary,train,X-ray
+is the width of the abdominal aorta within normal limits?,no,0,binary,train,X-ray
+are there at least 8 ribs visible for good inspiratory effort?,yes,1,binary,train,X-ray
+is there fat stranding?,yes,1,binary,train,X-ray
+is there blurring of the grey-white matter junctions in the right temporal lobe?,yes,1,binary,train,X-ray
+is a clavicular fracture present?,no,0,binary,train,X-ray
+is there contrast given?,yes,1,binary,train,X-ray
+is there edema?,yes,1,binary,train,X-ray
+is hyperinflation depicted?,yes,1,binary,train,X-ray
+is the lesion causing significant brainstem herniation?,no,0,binary,train,X-ray
+is there evidence of calcification?,no,0,binary,train,X-ray
+does this xray show an intubated patient?,no,0,binary,train,X-ray
+is there oral contrast in the patient's small bowel?,yes,1,binary,train,X-ray
+is this a normal image?,no,0,binary,train,X-ray
+is this an mri?,yes,1,binary,train,X-ray
+is there contrast in the vasculature?,no,0,binary,train,X-ray
+do you see a pleural effusion?,no,0,binary,train,X-ray
+is there a fracture?,no,0,binary,train,X-ray
+is there contrast in this image?,yes,1,binary,train,X-ray
+is the cardiac silhouette enlarged?,no,0,binary,train,X-ray
+are there rib fractures present?,no,0,binary,train,X-ray
+does this image use gi contrast?,yes,1,binary,train,X-ray
+is the image above oriented in the axial plane?,yes,1,binary,train,X-ray
+is tracheal deviation present?,yes,1,binary,train,X-ray
+is this an axial image?,yes,1,binary,train,X-ray
+is the transverse colon in view?,yes,1,binary,train,X-ray
+is the right lung normal in size?,no,0,binary,train,X-ray
+are any intestinal abnormalities present?,no,0,binary,train,X-ray
+is air present in the bowel?,yes,1,binary,train,X-ray
+is this in the lumbar vertebral level?,yes,1,binary,train,X-ray
+is hemorrhage seen?,no,0,binary,train,X-ray
+is this a transverse section?,yes,1,binary,train,X-ray
+is there contrast used in the above image?,yes,1,binary,train,X-ray
+is there contrast in the patient's vasculature?,yes,1,binary,train,X-ray
+are there any fractures in any of the ribs?,no,0,binary,train,X-ray
+is there evidence of an aortic aneurysm?,no,0,binary,train,X-ray
+are these small opacities in the right lung calcifications?,no,0,binary,train,X-ray
+is there free air under the diaphragm?,no,0,binary,train,X-ray
+is this a pa film?,yes,1,binary,train,X-ray
+is this a mid-sagittal film?,no,0,binary,train,X-ray
+do the pulmonary arteries appear enlarged?,yes,1,binary,train,X-ray
+is the mass contrast-enhancing?,no,0,binary,train,X-ray
+are the ventricles visualized in this image?,no,0,binary,train,X-ray
+are the heart and lungs displayed well in this film,yes,1,binary,train,X-ray
+can an aortic aneurysm be appreciated?,no,0,binary,train,X-ray
+can this image highlight bone fractures (if present)?,yes,1,binary,train,X-ray
+does the heart appear normal size?,no,0,binary,train,X-ray
+is there free air under the diaphragm?,no,0,binary,train,X-ray
+is this a ct image?,no,0,binary,train,X-ray
+is this mass located in the liver?,yes,1,binary,train,X-ray
+is the heart larger than normal?,no,0,binary,train,X-ray
+is this an mri?,no,0,binary,train,X-ray
+is there air in the abdominal cavity?,no,0,binary,train,X-ray
+is this xray suggestive of aortic dissection?,no,0,binary,train,X-ray
+can the liver be seen in this image?,yes,1,binary,train,X-ray
+is it possible to see the cerebellum?,no,0,binary,train,X-ray
+does this image show a pneumothorax?,no,0,binary,train,X-ray
+are there multiple lesions in the chest of the above patient?,no,0,binary,validation,X-ray
+are the lungs clear?,no,0,binary,validation,X-ray
+is there intraperitoneal hemorrhage present in this image?,yes,1,binary,validation,X-ray
+is the bowel obstructed?,yes,1,binary,validation,X-ray
+is there a pleural effusion present?,no,0,binary,validation,X-ray
+is the left and right mca present?,yes,1,binary,validation,X-ray
+is a cystic cavity present in the left kidney on this image?,no,0,binary,validation,X-ray
+is there a mass in the lung?,yes,1,binary,validation,X-ray
+is there gall bladder pathology?,no,0,binary,validation,X-ray
+is there swelling around the lesion?,no,0,binary,validation,X-ray
+is the pulmonary system shown?,yes,1,binary,validation,X-ray
+are the lateral ventricles compressed?,yes,1,binary,validation,X-ray
+are any fractures present?,no,0,binary,validation,X-ray
+is there evidence of midlight shift of structures on this mri?,yes,1,binary,validation,X-ray
+is any structure inflamed?,yes,1,binary,validation,X-ray
+is the mass surrounding the aorta?,no,0,binary,validation,X-ray
+is the descending aortic silhouette of normal contour?,yes,1,binary,validation,X-ray
+is there a pneumothorax?,yes,1,binary,validation,X-ray
+are there >8 ribs shown in this image?,yes,1,binary,validation,X-ray
+is a pleural effusion present?,no,0,binary,validation,X-ray
+are the hilar soft tissue densities symmetric?,no,0,binary,validation,X-ray
+is the right hemidiaphragm higher than the left?,yes,1,binary,validation,X-ray
+is the patient's heart enlarged?,no,0,binary,validation,X-ray
+do the enhanced muscles appear enlarged?,yes,1,binary,validation,X-ray
+are there patchy infiltrates present?,yes,1,binary,validation,X-ray
+is there cardiac enlargement?,yes,1,binary,validation,X-ray
+is there evidence of brainstem herniation in this section,no,0,binary,validation,X-ray
+is this the brain?,yes,1,binary,validation,X-ray
+is this a standing cxr,no,0,binary,validation,X-ray
+is there a fracture of the clavicle?,no,0,binary,validation,X-ray
+is the heart enlarged?,no,0,binary,validation,X-ray
+is the occipital lobe visible in this image?,no,0,binary,validation,X-ray
+are there any abnormal hypodense lesions in the liver?,no,0,binary,validation,X-ray
+is the liver normal?,yes,1,binary,validation,X-ray
+is the heart size increased?,no,0,binary,validation,X-ray
+are the kidneys visible in this image?,yes,1,binary,validation,X-ray
+is this a t1 weighted image?,no,0,binary,validation,X-ray
+is the chest xray underexposed?,yes,1,binary,validation,X-ray
+did the problem originate in the brain?,no,0,binary,validation,X-ray
+is this taken in the axial plane?,yes,1,binary,validation,X-ray
+is the liver parenchyma homogenous and normal?,yes,1,binary,validation,X-ray
+does the gi contrast hi-light the small bowel?,yes,1,binary,validation,X-ray
+is the mass compressing the mid brain on this section?,yes,1,binary,validation,X-ray
+are there any pulmonary consolidations?,no,0,binary,validation,X-ray
+are the lungs increased in size?,no,0,binary,validation,X-ray
+is there dependent layering in the occipital horns of the lateral ventricles?,yes,1,binary,validation,X-ray
+does this image show a pleural effusion?,no,0,binary,validation,X-ray
+does this patient have a skull fracture?,no,0,binary,validation,X-ray
+is there anoxic brain infarction?,yes,1,binary,validation,X-ray
+is there evidence of metastatic tissue on organs surrounding the liver?,no,0,binary,validation,X-ray
+is this brain scan normal?,no,0,binary,validation,X-ray
+is the heart a normal size?,yes,1,binary,validation,X-ray
+does the patient have ascites?,yes,1,binary,validation,X-ray
+is there a lesion in the left temporal lobe?,yes,1,binary,validation,X-ray
+are the opacities confined to one lung lobe?,no,0,binary,validation,X-ray
+doe this image depict an interstitial lung process?,yes,1,binary,validation,X-ray
+is this image sufficient to diagnose pericardial effusion?,no,0,binary,validation,X-ray
+is the heart enlarged?,no,0,binary,validation,X-ray
+is this a special kind of x-ray?,no,0,binary,validation,X-ray
+is this a hepatic mass?,yes,1,binary,validation,X-ray
+is there mass effect from the lesion?,no,0,binary,validation,X-ray
+is there a midline shift?,yes,1,binary,validation,X-ray
+is there evidence of pneumoperitoneum?,yes,1,binary,validation,X-ray
+is there evidence of a pleural effusion?,no,0,binary,validation,X-ray
+can you evaluate the kidneys 	bladde r	or ureters in this image?,no,0,binary,validation,X-ray
+is the heart enlarged?,no,0,binary,validation,X-ray
+is there evidence of grey matter edema?,yes,1,binary,validation,X-ray
+is the trachea deviated?,yes,1,binary,validation,X-ray
+is there oral contrast in the colon?,yes,1,binary,validation,X-ray
+is the duodenum edematous?,yes,1,binary,validation,X-ray
+is there structural deviation from the midline?,no,0,binary,validation,X-ray
+is there any mass shift?,no,0,binary,validation,X-ray
+is there evidence of enhancement?,yes,1,binary,validation,X-ray
+does the heart border appear normal?,yes,1,binary,validation,X-ray
+is the air under the left hemidiaphragm pathologic?,no,0,binary,validation,X-ray
+does this radiograph contain parts of the cardiovascular system?,yes,1,binary,validation,X-ray
+does this image display the cns?,yes,1,binary,validation,X-ray
+is there ring-enhancement?,no,0,binary,validation,X-ray
+is this an ap cxr,yes,1,binary,validation,X-ray
+is this film taken in a pa modality?,yes,1,binary,validation,X-ray
+is there contrast in this image,yes,1,binary,validation,X-ray
+is the abnormality hyper intense?,yes,1,binary,validation,X-ray
+are the walls of the colon thickened?,yes,1,binary,validation,X-ray
+are there epidural or subdural bleeds as well?,no,0,binary,validation,X-ray
+is this a tension pneumothorax?,no,0,binary,validation,X-ray
+is the aorta in view?,yes,1,binary,validation,X-ray
+is there blurring of the grey-white matter junction?,no,0,binary,validation,X-ray
+is there thickening of the gastric wall?,yes,1,binary,validation,X-ray
+was this image taken without motion artifact,yes,1,binary,validation,X-ray
+is there more that one lesion present?,no,0,binary,validation,X-ray
+is the right kidney abnormal here?,no,0,binary,validation,X-ray
+is the mass heterogenous?,yes,1,binary,validation,X-ray
+do you see a pleural effusion?,no,0,binary,validation,X-ray
+is the gb normal?,yes,1,binary,validation,X-ray
+is anything irregular in this image?,yes,1,binary,validation,X-ray
+is there a pleural effusion,no,0,binary,validation,X-ray
+is this an axial plane?,yes,1,binary,validation,X-ray
+is there a cavitary lesion?,yes,1,binary,validation,X-ray
+anything abnormal in this image?,no,0,binary,validation,X-ray
+are there decreased lung markings in the right upper lung field?,yes,1,binary,validation,X-ray
+is there a lung mass?,yes,1,binary,validation,X-ray
+is the mass homogeneous?,no,0,binary,validation,X-ray
+is there a mediastinal shift?,yes,1,binary,validation,X-ray
+is the mass well-defined?,yes,1,binary,validation,X-ray
+was this chest x ray taken in pa format?,yes,1,binary,validation,X-ray
+are calcified lesions present in the lung fields?,no,0,binary,validation,X-ray
+is there a blood clot?,yes,1,binary,validation,X-ray
+is this image normal?,no,0,binary,validation,X-ray
+is the right renal vein visualized?,no,0,binary,validation,X-ray
+is this image normal?,no,0,binary,validation,X-ray
+are there abnormalities with in the contrast between white and grey matter?,yes,1,binary,validation,X-ray
+is there a loculated pancreatic mass?,yes,1,binary,validation,X-ray
+is there evidence of inflammation?,yes,1,binary,validation,X-ray
+can you appreciate hemorrhage in this image?,yes,1,binary,validation,X-ray
+is the liver lacerated?,no,0,binary,validation,X-ray
+is the liver parenchyma normal?,yes,1,binary,validation,X-ray
+are there any abnormalities in the kidneys?,no,0,binary,validation,X-ray
+is the appendix visualized with contrast?,no,0,binary,validation,X-ray
+is there evidence of left lung field hyperinflation?,yes,1,binary,validation,X-ray
+are the findings normal?,no,0,binary,validation,X-ray
+is this a ct image?,no,0,binary,validation,X-ray
+is this patient rotated?,no,0,binary,validation,X-ray
+are sections of bowel recognizable?,yes,1,binary,validation,X-ray
+would perform this same modality in a patient with aki?,no,0,binary,validation,X-ray
+are the kidneys atrophied?,no,0,binary,validation,X-ray
+are the airway walls thickened in the bases?,yes,1,binary,validation,X-ray
+is there significant difference between gray and white matter here?,yes,1,binary,validation,X-ray
+is there evidence of cytotoxic edema in the right temporal lobe?,yes,1,binary,validation,X-ray
+are there multiple circumferential opacities located throughout all lung fields?,yes,1,binary,validation,X-ray
+is there increased lung markings near the hilum?,no,0,binary,validation,X-ray
+does this patient have a pleural effusion?,no,0,binary,validation,X-ray
+is there cardiomegaly?,no,0,binary,validation,X-ray
+are there rib fractures present?,no,0,binary,validation,X-ray
+is the patient's kidney this large mass to the right?,yes,1,binary,validation,X-ray
+are there any other organs visualized in this image?,yes,1,binary,validation,X-ray
+is the structure cystic?,yes,1,binary,validation,X-ray
+does the patient have any bone fractures?,no,0,binary,validation,X-ray
+is this a study of the brain?,no,0,binary,validation,X-ray
+is there a pleural effusion?,no,0,binary,validation,X-ray
+is there air in the bowel?,yes,1,binary,validation,X-ray
+is there a unified process?,no,0,binary,validation,X-ray
+is there any shift of midline structures visible in this section?,no,0,binary,validation,X-ray
+is mesenteric lymphadenopathy present?,yes,1,binary,validation,X-ray
+was this image taken with patient in symmetrical supine position?,yes,1,binary,validation,X-ray
+is this an axial cut?,yes,1,binary,validation,X-ray
+is there evidence of calcifications in the cerebral arteries?,yes,1,binary,validation,X-ray
+any evidence of epidural or subdural hematoma?,no,0,binary,validation,X-ray
+are there air fluid levels?,yes,1,binary,validation,X-ray
+is the gallbladder large in size?,no,0,binary,validation,X-ray
+are the margins of the cardiac silhouette normal?,no,0,binary,validation,X-ray
+are there pleural effusions present?,no,0,binary,validation,X-ray
+is there a midline shift?,no,0,binary,validation,X-ray
+is there a skull fracture?,no,0,binary,validation,X-ray
+is there a pseudocyst in the pancreas?,no,0,binary,validation,X-ray
+is there evidence of ectopic tissue present in surrounding organs?,no,0,binary,validation,X-ray
+is there hilar adenopathy?,yes,1,binary,validation,X-ray
+is this an image of the right and left temporal lobes?,yes,1,binary,validation,X-ray
+are the sulci blunted?,yes,1,binary,validation,X-ray
+is there hemorrhage,yes,1,binary,validation,X-ray
+does the left humerus appear to be fractured?,no,0,binary,validation,X-ray
+are there any other cysts in the image?,no,0,binary,validation,X-ray
+is the cerebellum visible?,no,0,binary,validation,X-ray
+is the skull fractured?,no,0,binary,validation,X-ray
+are there 2 kidneys?,yes,1,binary,validation,X-ray
+is there midline shift?,yes,1,binary,validation,X-ray
+is it possible to identify the right renal vein?,no,0,binary,validation,X-ray
+is this a contrast enhanced image?,yes,1,binary,validation,X-ray
+is there involvement of the caudate nucleus?,yes,1,binary,validation,X-ray
+are any of the patient's ribs fractured?,no,0,binary,validation,X-ray
+can the left ribs be evaluated?,no,0,binary,validation,X-ray
+is the inferior vena cava compressed by the tumor?,no,0,binary,validation,X-ray
+is there abnormal air present under the diaphragm?,no,0,binary,validation,X-ray
+do you see a subdural hematoma?,no,0,binary,validation,X-ray
+is there evidence of free peritoneal fluid?,no,0,binary,validation,X-ray
+is this mri taken with flair protocol?,yes,1,binary,validation,X-ray
+is it difficult to delineate the left costophrenic angle?,yes,1,binary,validation,X-ray
+are there any fractures in this image?,no,0,binary,validation,X-ray
+is the trachea normal?,yes,1,binary,validation,X-ray
+is there a right-sided pleural effusion?,no,0,binary,validation,X-ray
+can gray-white differentiation be well assessed with this image?,no,0,binary,validation,X-ray
+is there stool in the colon?,yes,1,binary,validation,X-ray
+is there evidence of air in the peritoneum?,yes,1,binary,validation,X-ray
+is a ring enhancing lesion present in the right lobe of the liver?,no,0,binary,validation,X-ray
+is the pancreatic mass enhancing?,no,0,binary,validation,X-ray
+is there an abnormality?,yes,1,binary,validation,X-ray
+is there evidence of intraparenchymal lung nodules?,no,0,binary,validation,X-ray
+are these normal looking kidneys?,yes,1,binary,validation,X-ray
+is the liver normal in size?,no,0,binary,validation,X-ray
+is this heart failure,yes,1,binary,validation,X-ray
+is this a ct scan?,yes,1,binary,validation,X-ray
