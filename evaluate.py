@@ -1,36 +1,25 @@
 import pandas as pd
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+import os
 
-# Load your actual dataset containing true labels and predictions
-df = pd.read_csv("data/results.csv")
+# 1. Define paths
+INPUT_CSV_PATH = "Phuong_report.csv"
+OUTPUT_TABLE_PATH = "outputs/tables/model_comparison.csv"
 
-# Convert the continuous probabilities into binary predictions at a 0.5 threshold
-df["cnn_pred"] = (df["cnn_prob"] >= 0.5).astype(int)
-df["fusion_pred"] = (df["fusion_prob"] >= 0.5).astype(int)
+print(f"Loading real metrics from: {INPUT_CSV_PATH}")
 
-results = []
+if not os.path.exists(INPUT_CSV_PATH):
+    raise FileNotFoundError(f"Could not find {INPUT_CSV_PATH}.")
 
-models = {
-    "CNN Only": ("cnn_pred", "cnn_prob"),
-    "Fusion Model": ("fusion_pred", "fusion_prob")
-}
+# 2. Read Phuong's real data
+df = pd.read_csv(INPUT_CSV_PATH)
 
-for model_name, (pred_col, prob_col) in models.items():
-    accuracy = accuracy_score(df["true_label"], df[pred_col])
-    f1 = f1_score(df["true_label"], df[pred_col])
-    auc = roc_auc_score(df["true_label"], df[prob_col])
+# Clean up column names just in case there are trailing spaces
+df.columns = df.columns.str.strip()
 
-    results.append({
-        "Model": model_name,
-        "Accuracy": round(accuracy, 4),
-        "F1 Score": round(f1, 4),
-        "AUC-ROC": round(auc, 4)
-    })
+# 3. Save the exact metrics to your output folder
+os.makedirs(os.path.dirname(OUTPUT_TABLE_PATH), exist_ok=True)
+df.to_csv(OUTPUT_TABLE_PATH, index=False)
 
-results_df = pd.DataFrame(results)
-
-# Save the metrics table directly to your outputs folder
-results_df.to_csv("outputs/tables/model_comparison.csv", index=False)
-
-print("\n--- Model Evaluation Results ---")
-print(results_df)
+print("\n=== Final Team Metrics Loaded ===")
+print(df.to_string(index=False))
+print(f"\nSaved updated table to: {OUTPUT_TABLE_PATH}")

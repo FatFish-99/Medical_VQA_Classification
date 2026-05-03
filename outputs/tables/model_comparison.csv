@@ -1,0 +1,6 @@
+Model,Accuracy,F1,AUC_ROC
+TF-IDF + Logistic Regression,0.6684,0.6441,0.7073
+TF-IDF + SVM,0.6895,0.6704,0.7517
+CNN from scratch,0.5895,,
+ResNet-18 (layer4 unfrozen),0.7263,0.75,0.774
+Fusion (ResNet-18 + CLIP),0.7526,0.7662,0.8198
