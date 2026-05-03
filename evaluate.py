@@ -1,36 +1,50 @@
 import pandas as pd
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+import os
 
-# Load your actual dataset containing true labels and predictions
-df = pd.read_csv("data/results.csv")
+# 1. Define paths
+CSV_PATH = "data/results.csv"
+OUTPUT_TABLE_PATH = "outputs/tables/model_comparison.csv"
 
-# Convert the continuous probabilities into binary predictions at a 0.5 threshold
-df["cnn_pred"] = (df["cnn_prob"] >= 0.5).astype(int)
-df["fusion_pred"] = (df["fusion_prob"] >= 0.5).astype(int)
+print(f"Evaluating models from: {CSV_PATH}")
+
+if not os.path.exists(CSV_PATH):
+    raise FileNotFoundError(f"Could not find {CSV_PATH}. Please make sure the file is in the data folder.")
+
+# Load data
+df = pd.read_csv(CSV_PATH)
+y_true = df["true_label"].values
+
+# Define models to test
+models = {
+    "ResNet Baseline (Vision-only)": df["cnn_prob"].values,
+    "Multimodal Fusion Model": df["fusion_prob"].values
+}
 
 results = []
 
-models = {
-    "CNN Only": ("cnn_pred", "cnn_prob"),
-    "Fusion Model": ("fusion_pred", "fusion_prob")
-}
-
-for model_name, (pred_col, prob_col) in models.items():
-    accuracy = accuracy_score(df["true_label"], df[pred_col])
-    f1 = f1_score(df["true_label"], df[pred_col])
-    auc = roc_auc_score(df["true_label"], df[prob_col])
-
+# 2. Calculate metrics for each model
+for model_name, y_prob in models.items():
+    # Convert probabilities to a 0 or 1 prediction at a 0.5 threshold
+    y_pred = (y_prob >= 0.5).astype(int)
+    
+    # Calculate metrics
+    acc = accuracy_score(y_true, y_pred)
+    f1 = f1_score(y_true, y_pred)
+    auc = roc_auc_score(y_true, y_prob)
+    
     results.append({
-        "Model": model_name,
-        "Accuracy": round(accuracy, 4),
-        "F1 Score": round(f1, 4),
-        "AUC-ROC": round(auc, 4)
+        "Model Architecture": model_name,
+        "Accuracy": f"{acc * 100:.1f}%",
+        "F1-Score": f"{f1:.2f}",
+        "ROC-AUC": f"{auc:.2f}"
     })
 
-results_df = pd.DataFrame(results)
+# 3. Create DataFrame and save it
+df_results = pd.DataFrame(results)
+os.makedirs(os.path.dirname(OUTPUT_TABLE_PATH), exist_ok=True)
+df_results.to_csv(OUTPUT_TABLE_PATH, index=False)
 
-# Save the metrics table directly to your outputs folder
-results_df.to_csv("outputs/tables/model_comparison.csv", index=False)
-
-print("\n--- Model Evaluation Results ---")
-print(results_df)
+print("\n=== Evaluation Metrics Results ===")
+print(df_results.to_string(index=False))
+print(f"\nSaved metrics table to: {OUTPUT_TABLE_PATH}")
