@@ -1,0 +1,7 @@
+Model,Accuracy,F1,AUC-ROC
+TF-IDF + Logistic Regression,0.6684,0.6441,0.7073
+TF-IDF + SVM,0.6895,0.6704,0.7517
+ResNet-18 (layer4 unfrozen),0.7263,0.75,0.774
+Fusion: ResNet-18 + CLIP,0.7579,0.7723,0.8194
+Fusion: ResNet-18 + BioBERT,0.7789,0.7835,0.8204
+Fusion: ResNet-18 + BioBERT (tunning),0.7947,0.8,0.8281

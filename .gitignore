@@ -1,2 +1,11 @@
 .venv/
 __pycache__
+*.pth
+.DS_Store
+*.pptx
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
