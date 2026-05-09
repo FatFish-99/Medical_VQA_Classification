@@ -15,7 +15,8 @@
 % ============================================================
 %  TODO (Member 4): finalise title
 % ============================================================
-\title{A Specialized Two-Stage Pipeline for Medical Visual Question Answering: Leveraging BioBERT Fusion and Task-Specific Routing}
+\title{Binary Medical Visual Question Answering via Multimodal Fusion of Image and Text Encoders}
+
 \author{%
   % TODO (Member 1): fill in your name / email
   Member 1 Name \\
@@ -35,10 +36,10 @@
   \texttt{member3@example.com} \\
   \And
   % TODO (Member 4): fill in your name / email
-  Sana Azhar \\
+  Member 4 Name \\
   Department of Computer Science \\
   University of Houston \\
-  \texttt{sanaazhar59@gmail.com} \\
+  \texttt{member4@example.com} \\
 }
 
 \begin{document}
@@ -64,11 +65,8 @@ multimodal fusion models combining ResNet-18 with either CLIP or BioBERT. For
 open-ended VQA we integrate a BLIP model and evaluate with BLEU, ROUGE, and
 BERTScore. Our best binary classifier---ResNet-18 fused with a fine-tuned
 BioBERT---achieves \textbf{79.5\% accuracy} and \textbf{0.83 AUC-ROC},
-outperforming single-modality baselines by over 7 percentage points. For the 
-open-ended branch, our fine-tuned BLIP architecture demonstrates the ability 
-to generate clinically relevant captions, achieving a BERTScore of 0.XX 
-[Replace with Member 3's number], further validating the utility of our 
-dual-branch pipeline for comprehensive clinical decision support.
+outperforming single-modality baselines by over 7 percentage points.
+% TODO (Member 4): update numbers and add captioning results once confirmed
 \end{abstract}
 
 
@@ -88,11 +86,7 @@ to produce a correct answer. Questions may be binary (``Is there a fracture?'')
 or open-ended (``What abnormality is visible?''), requiring different modelling
 strategies.
 
-The development of Med-VQA systems is hindered by several domain-specific challenges. Unlike general-domain VQA, medical datasets are often limited in size due to the high cost of expert annotation and privacy regulations. Furthermore, clinical images exhibit significant visual diversity across modalities such as X-ray, MRI, and CT, while the accompanying questions utilize a highly specialized vocabulary. Standard vision-language models pretrained on natural images often fail to capture the subtle pathological markers—such as micro-calcifications or hairline fractures—that are critical for accurate diagnosis.
-
-To address these challenges, we propose a two-stage pipeline that prioritizes task specialization. Our system first utilizes a high-accuracy routing classifier to separate simple binary inquiries from complex open-ended descriptions. Our core contribution is a multimodal fusion architecture that demonstrates the "BioBERT Advantage": by anchoring a fine-tuned ResNet-18 visual encoder with domain-specific biomedical language embeddings, we significantly outperform general-purpose models like CLIP. This approach allows the model to leverage deep clinical context, resulting in a more reliable diagnostic tool that achieves 79.5% accuracy on binary classification.
-
-The remainder of this paper is structured as follows. Section 2 reviews related work in multimodal learning and medical transformers. Section 3 describes our data preprocessing and exploratory analysis of the mixed-modality dataset. Section 4 details our routing logic and the mathematical framework of our fusion head. Finally, Section 5 presents our experimental benchmarks and a qualitative analysis of our model's performance, followed by our conclusions and directions for future research in Section 6.
+% TODO (Member 4): write the remaining introduction paragraphs here.
 
 
 % ============================================================
@@ -104,19 +98,20 @@ The remainder of this paper is structured as follows. Section 2 reviews related 
 \section{Background}
 
 \subsection{Visual Question Answering}
-Visual Question Answering (VQA) is a multimodal task requiring the high-level synthesis of computer vision and natural language processing. Since the introduction of the VQA v2 dataset~\cite{goyal2017making}, research has shifted from simple monolithic architectures to complex attention-based mechanisms. Early models relied on global feature concatenation, while modern approaches utilize Transformers to align visual regions with specific question tokens. The primary objective remains the same: to produce an answer that is both visually grounded and linguistically coherent.
+% TODO (Member 4): overview of VQA task and key datasets/models (VQA v2, etc.)
 
 \subsection{Medical VQA}
-Medical VQA (Med-VQA) extends standard VQA into the clinical domain, where accuracy is safety-critical. Datasets such as VQA-Med~\cite{lau2018dataset}, PathVQA, and SLAKE~\cite{liu2021slake} have been developed to benchmark performance on radiology and pathology images. Unlike general VQA, Med-VQA often suffers from "linguistic bias," where models ignore the image and guess based on common clinical questions. Recent state-of-the-art systems attempt to mitigate this by using domain-specific encoders and multimodal co-attention layers.
+% TODO (Member 4): VQA-Med, PathVQA, SLAKE — datasets and prior systems
 
 \subsection{Transfer Learning for Medical Imaging}
-Due to the scarcity of annotated medical images, transfer learning is a standard practice. While ImageNet pretraining on ResNet architectures~\cite{he2016resnet} provides a strong foundation for edge and texture detection, medical imagery often requires domain-specific fine-tuning. Models like CheXNet demonstrate that architectures pretrained on natural images can be adapted to identify pathologies like pneumonia with high precision, provided that the high-level layers (e.g., \texttt{layer4} in ResNet) are unfrozen to capture clinical pathological markers.
+% TODO (Member 4): ImageNet pretraining, CheXNet, domain generalisation
 
 \subsection{Biomedical Language Models}
-The evolution of Bidirectional Encoder Representations from Transformers (BERT)~\cite{devlin2018bert} has led to the creation of specialized biomedical variants. BioBERT~\cite{lee2020biobert} and PubMedBERT are pretrained on massive corpora of clinical literature and PubMed abstracts. These models outperform standard BERT on medical tasks because they understand clinical nuances—such as distinguishing between different types of "lesions" or "edemas"—that general-domain models often treat as synonymous or out-of-vocabulary terms.
+% TODO (Member 4): BERT, BioBERT, PubMedBERT — pretraining and downstream tasks
 
 \subsection{Vision-Language Models and Image Captioning}
-The emergence of Contrastive Language-Image Pre-training (CLIP)~\cite{radford2021clip} and Bootstrapping Language-Image Pre-training (BLIP) has revolutionized multimodal understanding. CLIP uses a dual-encoder strategy to align images and text in a shared latent space, while BLIP introduces a multimodal mixture of encoder-decoder modules to enable flexible generation. In Med-VQA, these models allow for open-ended captioning, moving beyond binary classification to provide descriptive diagnostic assistance.
+% TODO (Member 4): CLIP, BLIP, GIT — and their application to medical imaging
+
 
 % ============================================================
 %  3. DATA — Owner: Member 1
@@ -161,21 +156,15 @@ Our system consists of three components: (1) a routing classifier that
 separates binary from open-ended questions, (2) a binary VQA pipeline, and
 (3) an open-ended captioning pipeline. Figure~\ref{fig:pipeline} illustrates
 the overall architecture.
-Our proposed architecture follows a modular, multi-stage design to address the varying complexities of medical inquiries. The process begins with the **Routing Classifier**, which analyzes the linguistic structure of the input question. Using a TF-IDF vectorizer and a Linear SVM, this component identifies whether the query requires a binary categorical decision (e.g., "Yes/No") or a descriptive open-ended response. 
 
-Once routed, the input is handled by one of two specialized branches:
-\begin{enumerate}
-    \item \textbf{Binary VQA Branch:} This branch utilizes our primary multimodal fusion model. It extracts high-level visual features from the radiology scan using an unfrozen ResNet-18 and aligns them with clinical semantic embeddings from BioBERT. A dense classification head then maps this joint representation to a binary probability.
-    \item \textbf{Open-Ended Captioning Branch:} For questions requiring detailed descriptions, the system utilizes a fine-tuned BLIP architecture. This branch leverages an encoder-decoder framework to generate natural language sequences grounded in the visual evidence provided by the image.
-\end{enumerate}
-
-This bifurcated strategy allows each model to maintain high precision within its specific task domain, preventing the performance degradation often seen in monolithic VQA systems attempting to handle both tasks simultaneously.
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/pipeline.png}
-  \caption{End-to-end pipeline: routing classifier directs inputs to the binary classification or open-ended captioning branch.}
-  \label{fig:pipeline}
-\end{figure}
+% TODO (Member 4): add a pipeline diagram figure here
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.9\linewidth]{figures/pipeline.png}
+%   \caption{End-to-end pipeline: routing classifier directs inputs to the
+%            binary classification or open-ended captioning branch.}
+%   \label{fig:pipeline}
+% \end{figure}
 
 \subsection{Routing Classifier (Member 2)}
 To separate binary yes/no questions from open-ended questions, we train a
@@ -262,49 +251,34 @@ image and question prompt.
 For binary VQA we report accuracy, macro F1 score, and AUC-ROC on the
 validation split. For open-ended captioning we report BLEU-4, ROUGE-L, and
 BERTScore~\cite{TODO-bertscore}.
-\subsection{Ablation Study}
-To evaluate the contribution of each architectural component, we conducted a systematic ablation study on the binary classification branch. Our results, summarized in Table~\ref{tab:binary-results}, reveal three key insights:
-\begin{itemize}
-    \item \textbf{The Multimodal Gain:} Moving from the vision-only baseline (ResNet-18) to our CLIP fusion model resulted in a 3.16 percentage point (pp) increase in accuracy. This confirms that visual features alone are insufficient for Med-VQA without textual grounding.
-    \item \textbf{The BioBERT Advantage:} Replacing the general-purpose CLIP text encoder with the domain-specific BioBERT encoder further improved accuracy by 2.1 pp. BioBERT's specialized pretraining on clinical corpora allows for a more precise alignment between medical terminology and visual pathologies.
-    \item \textbf{Impact of Fine-Tuning:} Fine-tuning the top layers of BioBERT provided the final performance boost, raising accuracy to 79.47\% and macro-F1 to 0.80. This suggests that domain-adapted embeddings benefit significantly from being further specialized to the specific linguistic distribution of the VQA-RAD dataset.
-\end{itemize}
+% TODO (Member 4): add citations for metrics
+
 \subsection{Binary VQA Results}
-Table~\ref{tab:binary-results} summarizes the performance of all binary VQA models. Our results show a clear progression in performance as we move from text-only heuristics to multimodal fusion. Notably, the jump from the ResNet-18 baseline (72.63\%) to our top-performing fine-tuned BioBERT fusion (79.47\%) represents an absolute improvement of 6.84 percentage points, validating the efficacy of our architecture.
 
-\subsection{Ablation Study}
-To evaluate the contribution of each architectural component, we conducted a systematic ablation study on the binary classification branch. Our results, summarized in Table~\ref{tab:binary-results}, reveal three key insights:
-\begin{itemize}
-    \item \textbf{The Multimodal Gain:} Moving from the vision-only baseline (ResNet-18) to our CLIP fusion model resulted in a 3.16 percentage point (pp) increase in accuracy. This confirms that visual features alone are insufficient for Med-VQA without textual grounding.
-    \item \textbf{The BioBERT Advantage:} Replacing the general-purpose CLIP text encoder with the domain-specific BioBERT encoder further improved accuracy by 2.1 pp. BioBERT's specialized pretraining on clinical corpora allows for a more precise alignment between medical terminology and visual pathologies.
-    \item \textbf{Impact of Fine-Tuning:} Fine-tuning the top layers of BioBERT provided the final performance boost, raising accuracy to 79.47\% and macro-F1 to 0.80. This suggests that domain-adapted embeddings benefit significantly from being further specialized to the specific linguistic distribution of the dataset.
-\end{itemize}
-\subsection{Qualitative Analysis}
-To better understand the model's decision-making process, we analyzed several validation samples. The fusion model consistently outperformed the vision-only baseline in cases where the question provided critical anatomical context. For example, in images where multiple structures were visible, the BioBERT stream acted as a "semantic pointer," allowing the classification head to weigh visual features relevant to the specific organ mentioned in the query. Conversely, errors typically occurred in images with significant motion artifacts or in cases where the "Yes/No" answer required extremely high-resolution clinical indicators that exceeded our $224 \times 224$ input size.
-
-\subsection{Compute Resources}
-All experiments were conducted using NVIDIA T4 and A100 GPUs via Google Colab Pro. The binary fusion models utilized a batch size of 16 and a maximum sequence length of 128 tokens, requiring approximately 45 minutes to reach convergence over 30 epochs. The preprocessing and evaluation scripts were optimized using \texttt{PyTorch} 2.0 to handle multi-threaded image loading.
-\subsection{Open-Ended Captioning Results (Member 3)}
-% TODO (Member 3): provide your BLEU/ROUGE/BERTScore numbers
-\subsection{Open-Ended Captioning Results}
-
-The performance of our open-ended branch, utilizing the BLIP architecture, was evaluated using standard natural language generation metrics. Table~\ref{tab:captioning-results} details the results for the frozen versus fine-tuned configurations.
+Table~\ref{tab:binary-results} summarises the performance of all binary VQA
+models.
 
 \begin{table}[h]
-  \caption{Open-ended captioning results on the validation set.}
-  \label{tab:captioning-results}
+  \caption{Binary VQA model comparison on the validation set.}
+  \label{tab:binary-results}
   \centering
   \begin{tabular}{lccc}
     \toprule
-    Model Configuration & BLEU-4 & ROUGE-L & BERTScore \\
+    Model & Accuracy & F1 & AUC-ROC \\
     \midrule
-    BLIP (Frozen Vision Encoder)   & 0.124  & 0.315   & 0.621 \\
-    BLIP (Fine-tuned Language Head) & \textbf{0.187} & \textbf{0.384} & \textbf{0.712} \\
+    TF-IDF + Logistic Regression             & 0.6684 & 0.6441 & 0.7073 \\
+    TF-IDF + SVM                             & 0.6895 & 0.6704 & 0.7517 \\
+    ResNet-18 (layer4 unfrozen)              & 0.7263 & 0.7500 & 0.7740 \\
+    Fusion: ResNet-18 + CLIP                 & 0.7579 & 0.7723 & 0.8194 \\
+    Fusion: ResNet-18 + BioBERT              & 0.7789 & 0.7835 & 0.8204 \\
+    Fusion: ResNet-18 + BioBERT (fine-tuned) & \textbf{0.7947} & \textbf{0.8000} & \textbf{0.8281} \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-The results indicate that fine-tuning the language modeling head of the BLIP architecture is essential for clinical relevance. While the frozen baseline often generated generic descriptions, the fine-tuned model demonstrated a superior ability to utilize clinical terminology. Specifically, the jump in BERTScore to 0.712 suggests that the model is successfully capturing the semantic essence of the radiological findings, even when the exact wording differs from the ground-truth annotations.
+\subsection{Open-Ended Captioning Results (Member 3)}
+% TODO (Member 3): provide your BLEU/ROUGE/BERTScore numbers
+% TODO (Member 4): format into a table
 
 \begin{table}[h]
   \caption{Open-ended captioning results on the validation set.}
@@ -328,35 +302,24 @@ The results indicate that fine-tuning the language modeling head of the BLIP arc
 %   - LayerNorm: with vs without (if you have data)
 %   - CheXNet as image encoder: why it failed (domain mismatch)
 
-\subsection{End-to-End Pipeline Evaluation}
-Our system functions as a unified pipeline where the routing classifier acts as the primary decision gate. Evaluated on a held-out test set, the TF-IDF and SVM-based router achieved an accuracy of \textbf{97.8\%}, successfully directing nearly all queries to the appropriate specialized branch. This high routing precision is critical, as it ensures that the downstream multimodal fusion or BLIP models receive inputs that align with their specific training objectives. 
+\subsection{End-to-End Pipeline Evaluation (Member 4)}
+% TODO (Member 4): describe how the routing classifier connects to the two
+%   branches; report routing accuracy and overall end-to-end metrics
 
-When considering the entire pipeline, the cascading error rate remains remarkably low. Even in the few instances where routing was ambiguous, the specialized models showed a degree of robustness. We observed that routing errors primarily occurred on complex questions containing both binary and descriptive components (e.g., "Is there an abnormality and what is its location?"), which we identify as a target for future multi-task learning improvements where a single model could handle both output heads simultaneously.
+\subsection{Qualitative Analysis (Member 4)}
+% TODO (Member 4): include saliency / attention map visualisations
+%   - show examples where the model is correct vs incorrect
+%   - ROC curve figure
 
-\subsection{Qualitative Analysis}
-To evaluate the clinical reliability of our fusion architecture, we performed a qualitative review of model predictions across different imaging modalities. Figure~\ref{fig:roc} illustrates the Receiver Operating Characteristic (ROC) curves, where our proposed ResNet-18 + BioBERT fusion model maintains a superior curve compared to vision-only baselines. The fusion model demonstrates high diagnostic sensitivity, particularly in cases where the question provides critical anatomical context.
-
-Visually, we observed that the fusion model is significantly more robust than the image-only baseline. For example, in cases where a standard ResNet-18 might miss a subtle pleural effusion, the BioBERT-enhanced model utilizes the semantic context of the question (e.g., "Is there fluid in the pleural space?") to weigh visual features in the lower lung fields more heavily. 
-
-However, limitations remain. Common failure cases include images with high anatomical occlusion or extremely low contrast, where even the multimodal embeddings lacked sufficient signal to confirm a diagnosis. In some "Incorrect" examples, the model struggled with spatial relationships (e.g., "posterior to the heart"), suggesting that while our current fusion strategy captures global context, future iterations could benefit from localized attention mechanisms like Grad-CAM to further align visual pixels with specific question tokens.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.8\linewidth]{figures/roc_curve.png}
-  \caption{ROC curves for binary VQA models. The proposed Fusion model (AUC = 0.8281) consistently outperforms the vision-only ResNet-18 baseline (AUC = 0.7740).}
-  \label{fig:roc}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.8\linewidth]{figures/roc_curve.png}
-  \caption{ROC curves for binary VQA models. The proposed Fusion model (AUC = 0.8281) consistently outperforms the vision-only ResNet-18 baseline (AUC = 0.7740).}
-  \label{fig:roc}
-\end{figure}
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{figures/roc_curve.png}
+%   \caption{ROC curves for binary VQA models.}
+%   \label{fig:roc}
+% \end{figure}
 
 \subsection{Compute Resources}
-
-All experiments were conducted using a combination of NVIDIA T4 and A100 GPUs provided by the Google Colab Pro platform. The binary multimodal fusion models, trained with a batch size of 16 and a maximum sequence length of 128 tokens, required approximately 45 minutes to reach convergence over 30 epochs. The open-ended branch utilizing the BLIP architecture required significantly more memory for fine-tuning the language modeling head, necessitating the use of A100 GPUs (40GB VRAM) for efficient training and inference. Data preprocessing and augmentation were handled in parallel using the \texttt{PyTorch} DataLoader to minimize I/O bottlenecks during the $224 \times 224$ image transformation stage.
+% TODO (Member 4): GPU type (Colab T4/A100), approx. training time per model
 
 
 % ============================================================
@@ -370,26 +333,26 @@ binary questions, combining a ResNet-18 image encoder with a fine-tuned BioBERT
 text encoder achieves 79.5\% accuracy and 0.83 AUC-ROC, outperforming all
 single-modality baselines. The consistent advantage of BioBERT over CLIP
 confirms the value of domain-adapted language models for medical text.
+% TODO (Member 4): add captioning conclusions once Member 3's results are in
 
 \paragraph{Future work.}
-Several promising directions exist for extending this research. First, while our current architecture utilizes simple feature concatenation, we aim to implement **cross-attention fusion mechanisms**. This would allow the model to learn finer-grained interactions between specific pixels in the radiology scan and individual tokens in the clinical question, rather than relying on global vector representations. 
-
-Second, we intend to explore **end-to-end multi-task learning** for the routing and classification tasks. By training the routing classifier and the task-specific heads simultaneously, the system could benefit from shared feature representations, potentially improving the robustness of the captioning branch. Finally, we plan to evaluate our pipeline on larger, more diverse datasets like VQA-RAD and SLAKE to ensure the findings generalize across a broader spectrum of rare pathologies and imaging protocols.
-\begin{ack}
-
-\end{ack}
+% TODO (Member 4): suggest 2--3 directions, e.g.:
+%   - larger and more diverse medical VQA datasets
+%   - cross-attention fusion instead of simple concatenation
+%   - end-to-end trainable routing via multi-task learning
 
 
 % ============================================================
 \begin{ack}
-This project was completed as part of the COSC 4368 Fundamentals of Artificial Intelligence course at the University of Houston. We would like to express our sincere gratitude to Professor Sen Lin and the course teaching assistants for their guidance and support throughout the semester. We also thank the researchers behind the VQA-RAD dataset and the \texttt{robailleo/medical-vision-llm-dataset} for providing the open-access resources used in this study.
+This project was completed as part of COSC 4368 at the University of Houston.
+% TODO (Member 4): add instructor/TA name if appropriate
 \end{ack}
+
 
 % ============================================================
 \section*{References}
 {\small
-\section*{References}
-{\small
+% TODO (Member 4): replace TODOs with full citations; use consistent style
 
 [1] He, K., Zhang, X., Ren, S., \& Sun, J. (2016). Deep residual learning for image recognition. \textit{CVPR}.
 
@@ -399,124 +362,30 @@ This project was completed as part of the COSC 4368 Fundamentals of Artificial I
 
 [4] Devlin, J., Chang, M., Lee, K., \& Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. \textit{NAACL}.
 
-\section*{References}
-{\small
-
-[1] He, K., Zhang, X., Ren, S., \& Sun, J. (2016). Deep residual learning for image recognition. In \textit{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 770--778.
-
-[2] Lee, J., Yoon, W., Kim, S., et al. (2020). BioBERT: a pre-trained biomedical language representation model for biomedical text mining. \textit{Bioinformatics}, 36(4), 1234--1240.
-
-[3] Radford, A., Kim, J.W., Hallacy, C., et al. (2021). Learning transferable visual models from natural language supervision. In \textit{International Conference on Machine Learning (ICML)}, pp. 8748--8763. PMLR.
-
-[4] Devlin, J., Chang, M., Lee, K., \& Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In \textit{Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)}, pp. 4171--4186.
-
-[5] Li, J., Li, D., Xiong, C., \& Hoi, S. (2022). BLIP: Bootstrapping language-image pre-training for unified vision-language understanding and generation. In \textit{International Conference on Machine Learning (ICML)}, pp. 12888--12900. PMLR.
-
-[6] Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., \& Artzi, Y. (2020). BERTScore: Evaluating text generation with BERT. In \textit{International Conference on Learning Representations (ICLR)}.
-
-[7] Lau, J. J., Gayen, S., Abacha, A. B., \& Demner-Fushman, D. (2018). A dataset of clinically generated visual questions and answers about radiology images. \textit{Scientific Data}, 5(1), 1--10. [VQA-RAD].
-
-[8] Robailleo. (2024). \textit{Medical Vision LLM Dataset}. Hugging Face. Available at: \url{https://huggingface.co/datasets/robailleo/medical-vision-llm-dataset}.
-
-[9] Liu, B., Zhan, L. M., Xu, L., Ma, L., Yang, Y., \& Wu, X. M. (2021). Slake: A semantically-labeled knowledge-enhanced dataset for medical visual question answering. In \textit{IEEE 18th International Symposium on Biomedical Imaging (ISBI)}, pp. 1650--1654.
-}
-
-
+% TODO (Member 4): add citations for:
+%   - BLIP (Li et al. 2022)
+%   - BERTScore (Zhang et al. 2020)
+%   - VQA-Med dataset
+%   - robailleo/medical-vision-llm-dataset
+%   - any other related work cited in Background
 }
 
 
 % ============================================================
 \appendix
 \section{Supplementary Material}
-
-\subsection{Source Code and Reproducibility}
-To ensure the reproducibility of our results, all source code—including data preprocessing scripts, model definitions, and training notebooks—has been made publicly available. The repository includes a \texttt{requirements.txt} file for environment setup and a \texttt{README.md} with step-by-step instructions for running the routing classifier and multimodal fusion training.
-\\ \\
-\textbf{Repository URL:} \url{https://github.com/Sanaazhar59/Medical_VQA_Classification}
-
-\subsection{Detailed Model Architecture}
-The binary VQA branch utilizes a dual-stream architecture designed for feature alignment. The **Vision Stream** consists of a ResNet-18 backbone with an unfrozen \texttt{layer4}, while the **Language Stream** uses a BioBERT encoder to capture clinical semantics. Features are merged via a concatenation layer, followed by a three-layer MLP with 512 and 256 hidden units respectively, utilizing ReLU activation and a 0.5 Dropout rate.
-
-
-
-\subsection{Training Curves and Convergence}
-Models were trained using the AdamW optimizer with a learning rate of $10^{-4}$ and weight decay of $10^{-4}$. We utilized a batch size of 16 and employed early stopping to prevent overfitting on the VQA-RAD subset. As shown in the training dynamics, the fusion model reaches convergence faster than vision-only baselines, suggesting that textual grounding provides a more stable loss landscape.
-
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.48\linewidth]{figures/loss_curve.png}
-%   \includegraphics[width=0.48\linewidth]{figures/accuracy_curve.png}
-%   \caption{Training and validation loss (left) and accuracy (right) for the ResNet-18 + BioBERT fusion model.}
-%   \label{fig:curves}
-% \end{figure}
-
-\subsection{Hyperparameter Configuration}
-Table~\ref{tab:hyperparams} summarizes the final hyperparameters used for our best-performing model.
-
-\begin{table}[h]
-  \caption{Hyperparameter settings for the Fusion: ResNet-18 + BioBERT model.}
-  \label{tab:hyperparams}
-  \centering
-  \begin{tabular}{ll}
-    \toprule
-    Hyperparameter & Value \\
-    \midrule
-    Optimizer & AdamW \\
-    Learning Rate & $10^{-4}$ \\
-    Batch Size & 16 \\
-    Weight Decay & $10^{-4}$ \\
-    Dropout Rate & 0.5 \\
-    Epochs & 30 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+% Not counted toward the 4--6 page limit
 
 \subsection{Source Code}
-\section{Methods}
-
-Our system follows a modular design to address the varying complexities of medical inquiries. The process begins with the **Routing Classifier**, which analyzes the linguistic structure of the input question. Using a TF-IDF vectorizer and a Linear SVM, this component identifies whether the query requires a binary categorical decision (e.g., "Yes/No") or a descriptive open-ended response. 
-
-Once routed, the input is handled by one of two specialized branches:
-\begin{enumerate}
-    \item \textbf{Binary VQA Branch:} This utilizes our primary multimodal fusion model. It extracts visual features from the radiology scan using an unfrozen ResNet-18 and aligns them with clinical semantic embeddings from BioBERT. A dense classification head then maps this joint representation to a binary probability.
-    \item \textbf{Open-Ended Captioning Branch:} For questions requiring detailed descriptions, the system utilizes a fine-tuned BLIP architecture. This branch leverages an encoder-decoder framework to generate natural language sequences grounded in visual evidence.
-\end{enumerate}
-
-[Image of medical VQA system architecture flowchart]
-
-\subsection{Multimodal Fusion Architecture}
-Our fusion model concatenates image and text feature vectors:
-\begin{equation}
-    z_{fused} = [z_{img} \oplus z_{txt}]
-\end{equation}
-where $z_{img}$ is the 512-dim vector from ResNet-18 and $z_{txt}$ is the 768-dim vector from BioBERT. The fusion head consists of LayerNorm, a 256-unit hidden layer with ReLU, and a 0.5 Dropout rate for regularization.
+% TODO (Member 4): update with actual repo URL
+All notebooks and scripts are available at:
+\url{https://github.com/TODO/Medical_VQA_Classification}
 
 \subsection{Model Architecture Diagram}
+% TODO (Member 4): add fusion architecture figure if not included in main paper
 
-Our multimodal fusion architecture is designed as a dual-stream encoder network. The **Vision Stream** utilizes a ResNet-18 backbone, where the first three residual blocks are frozen to retain general visual features, while \texttt{layer4} is unfrozen to adapt to the specific textures of medical imaging. Simultaneously, the **Language Stream** processes the question text through a BioBERT-base encoder. 
-
-The output of the vision stream (a 512-dimensional vector) and the language stream (a 768-dimensional vector) are passed through individual **Layer Normalization** blocks to stabilize the feature scales before being concatenated into a single 1280-dimensional multimodal vector. This joint representation is then processed by a three-layer MLP fusion head with Dropout (0.5) to produce the final classification logit.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/fusion_architecture.png}
-  \caption{Detailed schematic of the multimodal fusion architecture showing the integration of ResNet-18 visual features and BioBERT textual embeddings.}
-  \label{fig:fusion_arch}
-\end{figure}
-
-\subsection{Training Curves and Convergence Analysis}
-
-We monitored the training process using Binary Cross-Entropy (BCE) loss and validation accuracy. The multimodal fusion models exhibited significantly more stable convergence compared to the image-only baselines. We observe that while the ResNet-18 baseline tended to fluctuate during the early epochs due to the high variability in medical imaging modalities, the inclusion of BioBERT embeddings acted as a regularizer, providing a consistent "semantic signal" that guided the visual encoder toward relevant features.
-
-Our best-performing model reached peak validation accuracy at epoch 23. To prevent overfitting on the small binary subset, we employed early stopping with a patience of 7 epochs and a learning rate scheduler that reduced the rate by half upon plateaus. The narrow gap between training and validation accuracy in Figure~\ref{fig:curves} confirms the effectiveness of our dropout and weight decay strategies.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.48\linewidth]{figures/loss_curve.png}
-  \includegraphics[width=0.48\linewidth]{figures/accuracy_curve.png}
-  \caption{Training and validation loss (left) and accuracy (right) for the ResNet-18 + BioBERT fusion model. The convergence patterns indicate stable learning and effective regularization.}
-  \label{fig:curves}
-\end{figure}
+\subsection{Training Curves}
+% TODO (Member 4): include loss/accuracy curves for key models
 
 
 % ============================================================
@@ -573,7 +442,7 @@ Our best-performing model reached peak validation accuracy at epoch 23. To preve
 \item {\bf Broader impacts}
     \item[] Question: Does the paper discuss societal impacts?
     \item[] Answer: \answerYes{}
-    \item[] Justification: We discuss the potential for automated diagnostic assistance to reduce clinical burden, while explicitly addressing the ethical risks of automation bias in Section 6.
+    \item[] Justification: % TODO (Member 4): add a broader impacts sentence in the Conclusion
 
 \item {\bf Safeguards}
     \item[] Question: Does the paper describe safeguards for responsible release?
