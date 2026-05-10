@@ -18,10 +18,10 @@
 \title{A Specialized Two-Stage Pipeline for Medical Visual Question Answering: Leveraging BioBERT Fusion and Task-Specific Routing}
 \author{%
   % TODO (Member 1): fill in your name / email
-  Member 1 Name \\
+  Aisulu Tulyeujan \\
   Department of Computer Science \\
   University of Houston \\
-  \texttt{member1@example.com} \\
+  \texttt{aisulutulyeujan@gmail.com} \\
   \And
   Phuong Ho \\
   Department of Computer Science \\
@@ -132,7 +132,35 @@ The emergence of Contrastive Language-Image Pre-training (CLIP)~\cite{radford202
 %   - image size distribution
 
 We use the \texttt{robailleo/medical-vision-llm-dataset} available on
-HuggingFace~\cite{TODO-dataset}.
+HuggingFace~\cite{robailleo-medical-vision-llm-dataset}. The dataset contains
+medical images with natural-language questions and answers. The full dataset has
+4,793 samples, with 3,834 samples in the training split and 959 samples in the
+validation split. The dataset includes different medical image modalities. In
+our EDA, the most common modality was X-ray with 2,325 samples, followed by CT
+with 1,351 samples. There were also 231 MRI samples, 70 ultrasound samples, 812
+unknown modality samples, 2 microscopy samples, and 2 endoscopy samples.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/sample_images.png}
+    \caption{Example medical images from the dataset. The dataset includes multiple medical imaging modalities such as X-ray, CT, MRI, and ultrasound.}
+    \label{fig:sample-images}
+\end{figure}
+
+We separated the answers into binary and open-ended examples. Binary questions
+were identified when the answer was exactly `yes'' or `no'' after text
+normalization. The dataset contained 940 binary examples and 3,853 open-ended
+examples. For the binary subset, we encoded `yes'' as 1 and `no'' as 0. The
+binary labels were almost balanced, with 467 yes examples and 473 no examples.
+In the binary subset, all examples were X-ray images.
+
+We also checked the image size distribution by sampling 400 images from the
+dataset. The image widths ranged from 250 to 1024 pixels, with an average width
+of about 671.7 pixels. The image heights ranged from 232 to 1326 pixels, with an
+average height of about 639.4 pixels. The images also had different color modes,
+including RGB and grayscale. This showed that the images needed to be resized
+and converted into a consistent format before training.
+
 % TODO (Member 1): fill in dataset statistics here
 
 \subsection{Preprocessing Pipeline}
@@ -142,14 +170,52 @@ HuggingFace~\cite{TODO-dataset}.
 %   - ImageNet normalisation (mean/std)
 %   - tokenisation strategy for text
 
-Images are resized to $224 \times 224$ pixels and normalized using ImageNet
-statistics (mean $[0.485, 0.456, 0.406]$, std $[0.229, 0.224, 0.225]$).
-Grayscale images are converted to three-channel RGB. Questions are tokenized
-with a maximum sequence length of 128 tokens.
+The preprocessing pipeline was designed to make the image and text data ready
+for the model. Each image is resized to $224 \times 224$ pixels so that all
+images have the same input size. Since some images are grayscale, every image is
+converted to three-channel RGB format. After that, the image is converted into a
+PyTorch tensor and normalized using ImageNet statistics with mean
+$[0.485, 0.456, 0.406]$ and standard deviation $[0.229, 0.224, 0.225]$. This is
+useful because the image encoder is based on pretrained CNN/ResNet models, which
+expect images in this format.
+
+For the text part, the question is kept as the input sentence for the text
+encoder. Questions are tokenized with a maximum sequence length of 128 tokens.
+Longer questions are truncated, and shorter questions are padded when needed.
+This gives the model a fixed-size text input while still keeping the important
+information from the question.
 
 \subsection{Train/Validation Split}
 % TODO (Member 1): describe split sizes, stratification strategy, class balance
 %   - report exact numbers after filtering to binary subset
+
+The dataset already provides official train and validation splits, so we did not
+create a new random split for the main experiments. After filtering the dataset
+to only binary yes/no examples, the binary training set contained 750 samples and
+the binary validation set contained 190 samples. The class distribution stayed
+balanced in both splits. In the training split, there were 379 no examples and
+371 yes examples. In the validation split, there were 94 no examples and 96 yes
+examples.
+
+Because the predefined split was already balanced, we used it directly for
+training and evaluation. We also checked the label percentages in each split:
+the training split was about 50.53\% no and 49.47\% yes, while the validation
+split was about 49.47\% no and 50.53\% yes. This showed that the official split
+was reasonable for binary classification.
+
+\begin{table}[h]
+    \centering
+    \caption{Binary label distribution after filtering to yes/no answers. Label 0 represents ``no'' and label 1 represents ``yes''.}
+    \label{tab:binary-split-distribution}
+    \begin{tabular}{lcc}
+        \hline
+        Split & Label 0 (No) & Label 1 (Yes) \\
+        \hline
+        Train & 379 & 371 \\
+        Validation & 94 & 96 \\
+        \hline
+    \end{tabular}
+\end{table}
 
 
 % ============================================================
