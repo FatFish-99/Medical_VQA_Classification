@@ -385,17 +385,17 @@ However, limitations remain. Common failure cases include images with high anato
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/roc_curve.png}
+  \fbox{
+    \parbox{0.8\linewidth}{
+      \centering
+      Placeholder for ROC curve visualization.
+    }
+  }
   \caption{ROC curves for binary VQA models. The proposed Fusion model (AUC = 0.8281) consistently outperforms the vision-only ResNet-18 baseline (AUC = 0.7740).}
   \label{fig:roc}
 \end{figure}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.8\linewidth]{figures/roc_curve.png}
-  \caption{ROC curves for binary VQA models. The proposed Fusion model (AUC = 0.8281) consistently outperforms the vision-only ResNet-18 baseline (AUC = 0.7740).}
-  \label{fig:roc}
-\end{figure}
+
 
 \subsection{Compute Resources}
 
@@ -525,7 +525,17 @@ Once routed, the input is handled by one of two specialized branches:
     \item \textbf{Open-Ended Captioning Branch:} For questions requiring detailed descriptions, the system utilizes a fine-tuned BLIP architecture. This branch leverages an encoder-decoder framework to generate natural language sequences grounded in visual evidence.
 \end{enumerate}
 
-[Image of medical VQA system architecture flowchart]
+\begin{figure}[h]
+  \centering
+  \fbox{
+    \parbox{0.9\linewidth}{
+      \centering
+      Placeholder for medical VQA system architecture flowchart.
+    }
+  }
+  \caption{Medical VQA system architecture flowchart.}
+  \label{fig:system_flowchart}
+\end{figure}
 
 \subsection{Multimodal Fusion Architecture}
 Our fusion model concatenates image and text feature vectors:
@@ -542,7 +552,12 @@ The output of the vision stream (a 512-dimensional vector) and the language stre
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/fusion_architecture.png}
+  \fbox{
+    \parbox{0.9\linewidth}{
+      \centering
+      Placeholder for multimodal fusion architecture diagram.
+    }
+  }
   \caption{Detailed schematic of the multimodal fusion architecture showing the integration of ResNet-18 visual features and BioBERT textual embeddings.}
   \label{fig:fusion_arch}
 \end{figure}
@@ -555,12 +570,15 @@ Our best-performing model reached peak validation accuracy at epoch 23. To preve
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.48\linewidth]{figures/loss_curve.png}
-  \includegraphics[width=0.48\linewidth]{figures/accuracy_curve.png}
+  \fbox{
+    \parbox{0.9\linewidth}{
+      \centering
+      Placeholder for training and validation curves.
+    }
+  }
   \caption{Training and validation loss (left) and accuracy (right) for the ResNet-18 + BioBERT fusion model. The convergence patterns indicate stable learning and effective regularization.}
   \label{fig:curves}
 \end{figure}
-
 
 % ============================================================
 \newpage
