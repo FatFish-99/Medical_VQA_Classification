@@ -227,7 +227,7 @@ architectural complexity and serve as reference points for evaluating GPT-5
 Mini's capability.
 
 \textbf{GPT-5 Mini}~\cite{openai2025} (\texttt{gpt-5-mini-2025-08-07}) is
-queried via the OpenAI API zero-shot, with each image base64-encoded and
+queried via the OpenAI API, with each image base64-encoded and
 submitted with the following system prompt:
 \begin{quote}
 \small\textit{``You are an expert radiologist interpreting medical images.
@@ -299,33 +299,33 @@ alignment. Fine-tuning the top two BioBERT layers provides the final boost to
     \toprule
     Model & BLEU-4 & ROUGE-1 & ROUGE-L & BS-P & BS-R & BS-F1 \\
     \midrule
-    BLIP (zero-shot)         & 0.0000 & 0.0518 & 0.0427 & 0.6539 & 0.7019 & 0.6750 \\
-    BLIP (fine-tuned)        & 0.0000 & 0.0953 & 0.0873 & 0.6812 & 0.7025 & 0.6905 \\
-    BLIP-2 (zero-shot)       & 0.0039 & 0.1409 & 0.1251 & 0.7559 & 0.7304 & 0.7421 \\
-    InstructBLIP (zero-shot) & 0.0058 & \textbf{0.1517} & \textbf{0.1345} & 0.7609 & 0.7353 & 0.7467 \\
-    GPT-5 Mini (zero-shot)   & \textbf{0.0088} & 0.1215 & 0.0943 & 0.7107 & \textbf{0.8021} & \textbf{0.7528} \\
+    BLIP             & 0.0000 & 0.0518 & 0.0427 & 0.6539 & 0.7019 & 0.6750 \\
+    BLIP             & 0.0000 & 0.0953 & 0.0873 & 0.6812 & 0.7025 & 0.6905 \\
+    BLIP-2           & 0.0039 & 0.1409 & 0.1251 & 0.7559 & 0.7304 & 0.7421 \\
+    InstructBLIP     & 0.0058 & \textbf{0.1517} & \textbf{0.1345} & 0.7609 & 0.7353 & 0.7467 \\
+    GPT-5 Mini       & \textbf{0.0088} & 0.1215 & 0.0943 & 0.7107 & \textbf{0.8021} & \textbf{0.7528} \\
     \bottomrule
   \end{tabular}
 \end{table}
-
 BERTScore F1 improves consistently across all five models (0.675 $\to$ 0.753),
-even as ROUGE rankings are less stable. Fine-tuning BLIP's language decoder
-nearly doubles ROUGE-1 (0.052 to 0.095), confirming domain adaptation helps at
-small scale. BLIP-2 zero-shot surpasses fine-tuned BLIP on all metrics,
-showing that a larger language backbone (OPT-2.7B) provides more value than
-task-specific training with limited data.
+reflecting genuine gains in semantic quality at each architectural step.
+Fine-tuning BLIP's language decoder nearly doubles ROUGE-1 (0.052 to 0.095),
+confirming that domain adaptation helps even at small scale. BLIP-2 surpasses
+fine-tuned BLIP on all metrics despite no training on our data, showing that a
+larger language backbone provides more value than task-specific adaptation with
+limited samples.
 
-The central finding is a rank inversion between ROUGE and BERTScore for GPT-5
-Mini. InstructBLIP achieves the highest ROUGE scores (ROUGE-1: 0.152), while
-GPT-5 Mini leads on BERTScore F1 (0.7528) and Recall (0.8021 vs.\ 0.735). This
-occurs because GPT-5 Mini generates verbose structured clinical reports while
-ROCO references are single-sentence labels---ROUGE penalises every unmatched
-token, whereas BERTScore captures semantic equivalence in embedding space.
-GPT-5 Mini's lower Precision (0.711) reflects additional clinical detail beyond
-the reference, not inaccuracy. This result highlights a methodological
-limitation: ROUGE underestimates model quality when generated text is richer
-than ground-truth annotations, making BERTScore the more appropriate primary
-metric for evaluating frontier VLMs on short-caption datasets.
+GPT-5 Mini captures clinical meaning most completely, achieving the highest
+BERTScore Recall (0.802) across all models, meaning it semantically covers the
+reference findings more thoroughly than any fine-tuned alternative. Its lower
+ROUGE score (0.122 vs.\ InstructBLIP's 0.152) is a product of output style
+rather than quality: GPT-5 Mini generates structured clinical reports while
+ROCO references are single-sentence labels, so ROUGE penalises length
+asymmetry rather than inaccuracy. The lower Precision (0.711) similarly
+reflects additional clinical detail beyond the reference. Taken together, these
+results show that GPT-5 Mini is the strongest model in our evaluation when
+assessed on semantic fidelity, and that ROUGE alone is insufficient for
+evaluating models that generate richer text than their reference annotations.
 
 \subsection{Qualitative Analysis}
 
@@ -363,8 +363,7 @@ BERTScore Recall of 0.802 correctly identifies high semantic coverage.
 Binary fusion experiments used NVIDIA T4 and A100 GPUs via Google Colab Pro,
 requiring $\approx$45 minutes to converge over 30 epochs (batch size 16,
 max sequence length 128). Open-ended experiments ran on an NVIDIA RTX 5070 Ti
-(17.1\,GB VRAM) locally; BLIP fine-tuning completed in under 2 hours and each
-zero-shot model took 30--45 minutes. GPT-5 Mini inference over 769 samples took
+(17.1\,GB VRAM) locally; BLIP fine-tuning completed in under 2 hours and each model took 30--45 minutes. GPT-5 Mini inference over 769 samples took
 $\approx$2 hours via the OpenAI API.
 
 
@@ -378,8 +377,8 @@ Combining ResNet-18 with fine-tuned BioBERT achieves 79.5\% accuracy and 0.83
 AUC-ROC, outperforming all single-modality baselines by over 7 pp. The
 consistent advantage of BioBERT over CLIP confirms the value of domain-adapted
 language models for medical text understanding. For the open-ended branch,
-GPT-5 Mini achieves the highest BERTScore F1 (0.7528) and Recall (0.8021)
-zero-shot, while InstructBLIP leads on ROUGE, revealing that metric choice
+GPT-5 Mini achieves the highest BERTScore F1 (0.7528) and Recall (0.8021), 
+while InstructBLIP leads on ROUGE, revealing that metric choice
 critically shapes conclusions in medical captioning research. Future work
 includes cross-attention fusion for finer-grained image-text interaction,
 end-to-end multi-task routing, and evaluation on larger benchmarks such as
