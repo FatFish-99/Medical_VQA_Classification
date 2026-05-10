@@ -15,12 +15,11 @@
 
 \title{MedVQA-Router: Bridging Binary Classification and Open-Ended Captioning for Medical Visual Question Answering}
 
-\author{%
-  % TODO (Member 1): fill in your name / email
-  Member 1 Name \\
+\author{
+  Aisulu Tulyeujan \\
   Department of Computer Science \\
   University of Houston \\
-  \texttt{member1@example.com} \\
+  \texttt{aisulutulyeujan@gmail.com} \\
   \And
   Phuong Ho \\
   Department of Computer Science \\
@@ -119,8 +118,6 @@ large-scale instruction-following captioning via the OpenAI API.
 \section{Data}
 \label{sec:data}
 
-% TODO (Member 1): expand this section with your full EDA findings
-
 \subsection{Dataset}
 We use the \texttt{robailleo/medical-vision-llm-dataset}~\cite{robailleo2024}
 from HuggingFace, a combined medical vision-language dataset comprising
@@ -134,15 +131,56 @@ followed by CT (1,351; 28.2\%), unknown modality (812; 16.9\%), MRI (231;
 \textbf{Body-part distribution:} Unknown (2,856), chest (718), abdomen (468),
 head (408), extremities (125), spine (119), and pelvis (99).
 
-\subsection{Preprocessing and Split}
-Images are resized to $224\times224$ and normalized using ImageNet statistics.
-Grayscale images are converted to three-channel RGB; questions are tokenized to
-a maximum of 128 tokens. After routing, the binary subset contains 940 samples (750 train / 190 val),
-nearly balanced at 49.5\% / 50.5\% yes/no. The open-ended subset contains the
-remaining 3,853 samples (3,084 train / 769 val), comprising all non-binary
-answers and drawn primarily from ROCO.
-% TODO (Member 1): confirm binary/open-ended routing counts on full 4,793-sample dataset
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/sample_images.png}
+    \caption{Example medical images from the dataset. The dataset includes multiple medical imaging modalities such as X-ray, CT, MRI, and ultrasound.}
+    \label{fig:sample-images}
+\end{figure}
 
+\subsection{Preprocessing and Split}
+The preprocessing pipeline was designed to make the image and text data ready
+for the model. Each image is resized to $224 \times 224$ pixels so that all
+images have the same input size. Since some images are grayscale, every image is
+converted to three-channel RGB format. After that, the image is converted into a
+PyTorch tensor and normalized using ImageNet statistics with mean
+$[0.485, 0.456, 0.406]$ and standard deviation $[0.229, 0.224, 0.225]$. This is
+useful because the image encoder is based on pretrained CNN/ResNet models, which
+expect images in this format.
+
+For the text part, the question is kept as the input sentence for the text
+encoder. Questions are tokenized with a maximum sequence length of 128 tokens.
+Longer questions are truncated, and shorter questions are padded when needed.
+This gives the model a fixed-size text input while still keeping the important
+information from the question.
+
+The dataset already provides official train and validation splits, so we did not
+create a new random split for the main experiments. After filtering the dataset
+to only binary yes/no examples, the binary training set contained 750 samples and
+the binary validation set contained 190 samples. The class distribution stayed
+balanced in both splits. In the training split, there were 379 no examples and
+371 yes examples. In the validation split, there were 94 no examples and 96 yes
+examples.
+
+Because the predefined split was already balanced, we used it directly for
+training and evaluation. We also checked the label percentages in each split:
+the training split was about 50.53\% no and 49.47\% yes, while the validation
+split was about 49.47\% no and 50.53\% yes. This showed that the official split
+was reasonable for binary classification.
+
+\begin{table}[h]
+    \centering
+    \caption{Binary label distribution after filtering to yes/no answers. Label 0 represents ``no'' and label 1 represents ``yes''.}
+    \label{tab:binary-split-distribution}
+    \begin{tabular}{lcc}
+        \hline
+        Split & Label 0 (No) & Label 1 (Yes) \\
+        \hline
+        Train & 379 & 371 \\
+        Validation & 94 & 96 \\
+        \hline
+    \end{tabular}
+\end{table}
 
 % ============================================================
 \section{Methods}
@@ -281,8 +319,11 @@ Results show a clear progression from text-only baselines to multimodal fusion.
 Moving from ResNet-18 alone (72.63\%) to CLIP fusion (+3.16 pp) confirms that
 visual features alone are insufficient without textual grounding. Replacing CLIP
 with BioBERT adds a further 2.1 pp, reflecting its stronger clinical vocabulary
-alignment. Fine-tuning the top two BioBERT layers provides the final boost to
-79.47\% accuracy and macro-F1 of 0.80.
+alignment. We fine-tuned the last 2 layers of BioBERT on the dataset as suggested
+from Prof. Lin, which improved accuracy from 77.9\% to 79.5\% (+1.6pp). Further 
+improvement is limited by the dataset size (~750 training samples) — the model 
+overfits heavily (train acc ~97\%) regardless of regularization strategy, 
+suggesting more labeled data would be the real bottleneck to address.
 
 \subsection{Open-Ended Captioning Results}
 \label{sec:captioning-results}
@@ -327,15 +368,6 @@ assessed on semantic fidelity, and that ROUGE alone is insufficient for
 evaluating models that generate richer text than their reference annotations.
 
 \subsection{Qualitative Analysis}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.82\linewidth]{figures/roc_curve.png}
-  \caption{ROC curves for binary VQA models. The fine-tuned BioBERT fusion
-           (AUC\,=\,0.8281) consistently outperforms the vision-only ResNet-18
-           baseline (AUC\,=\,0.7740).}
-  \label{fig:roc}
-\end{figure}
 
 For the binary branch, the BioBERT stream directed the classification head
 toward image regions relevant to the specific organ in the query, with failure
