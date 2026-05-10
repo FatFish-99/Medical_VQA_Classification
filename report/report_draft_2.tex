@@ -139,34 +139,18 @@ head (408), extremities (125), spine (119), and pelvis (99).
 \end{figure}
 
 \subsection{Preprocessing and Split}
-The preprocessing pipeline was designed to make the image and text data ready
-for the model. Each image is resized to $224 \times 224$ pixels so that all
-images have the same input size. Since some images are grayscale, every image is
-converted to three-channel RGB format. After that, the image is converted into a
-PyTorch tensor and normalized using ImageNet statistics with mean
-$[0.485, 0.456, 0.406]$ and standard deviation $[0.229, 0.224, 0.225]$. This is
-useful because the image encoder is based on pretrained CNN/ResNet models, which
-expect images in this format.
-
-For the text part, the question is kept as the input sentence for the text
-encoder. Questions are tokenized with a maximum sequence length of 128 tokens.
-Longer questions are truncated, and shorter questions are padded when needed.
-This gives the model a fixed-size text input while still keeping the important
-information from the question.
-
-The dataset already provides official train and validation splits, so we did not
-create a new random split for the main experiments. After filtering the dataset
-to only binary yes/no examples, the binary training set contained 750 samples and
-the binary validation set contained 190 samples. The class distribution stayed
-balanced in both splits. In the training split, there were 379 no examples and
-371 yes examples. In the validation split, there were 94 no examples and 96 yes
-examples.
-
-Because the predefined split was already balanced, we used it directly for
-training and evaluation. We also checked the label percentages in each split:
-the training split was about 50.53\% no and 49.47\% yes, while the validation
-split was about 49.47\% no and 50.53\% yes. This showed that the official split
-was reasonable for binary classification.
+The preprocessing pipeline prepares image and text inputs for the model. Images
+are resized to $224 \times 224$ pixels, converted to three-channel RGB, and
+normalized using ImageNet statistics (mean $[0.485, 0.456, 0.406]$, std
+$[0.229, 0.224, 0.225]$) to match the pretrained CNN/ResNet encoder's expected
+format. Questions are tokenized with a maximum length of 128 tokens, with
+truncation and padding applied as needed. 
+We used the dataset's official
+train/validation splits. After filtering for binary yes/no examples, the
+training set contained 750 samples (379 no, 371 yes) and the validation set
+contained 190 samples (94 no, 96 yes), yielding a near-perfect 50/50 class
+balance in both splits. The open-ended subset contains the remaining 3,853
+samples (3,084 train / 769 val), drawn primarily from ROCO.
 
 \begin{table}[h]
     \centering
@@ -339,8 +323,8 @@ suggesting more labeled data would be the real bottleneck to address.
     \toprule
     Model & BLEU-4 & ROUGE-1 & ROUGE-L & BS-P & BS-R & BS-F1 \\
     \midrule
-    BLIP             & 0.0000 & 0.0518 & 0.0427 & 0.6539 & 0.7019 & 0.6750 \\
-    BLIP             & 0.0000 & 0.0953 & 0.0873 & 0.6812 & 0.7025 & 0.6905 \\
+    BLIP (zero-shot)             & 0.0000 & 0.0518 & 0.0427 & 0.6539 & 0.7019 & 0.6750 \\
+    BLIP (fine-tuned)            & 0.0000 & 0.0953 & 0.0873 & 0.6812 & 0.7025 & 0.6905 \\
     BLIP-2           & 0.0039 & 0.1409 & 0.1251 & 0.7559 & 0.7304 & 0.7421 \\
     InstructBLIP     & 0.0058 & \textbf{0.1517} & \textbf{0.1345} & 0.7609 & 0.7353 & 0.7467 \\
     GPT-5 Mini       & \textbf{0.0088} & 0.1215 & 0.0943 & 0.7107 & \textbf{0.8021} & \textbf{0.7528} \\
