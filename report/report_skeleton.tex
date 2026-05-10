@@ -385,17 +385,10 @@ However, limitations remain. Common failure cases include images with high anato
 
 \begin{figure}[h]
   \centering
-  \fbox{
-    \parbox{0.8\linewidth}{
-      \centering
-      Placeholder for ROC curve visualization.
-    }
-  }
+  \includegraphics[width=0.8\linewidth]{figures/roc_curve.png}
   \caption{ROC curves for binary VQA models. The proposed Fusion model (AUC = 0.8281) consistently outperforms the vision-only ResNet-18 baseline (AUC = 0.7740).}
   \label{fig:roc}
 \end{figure}
-
-
 
 \subsection{Compute Resources}
 
@@ -527,12 +520,7 @@ Once routed, the input is handled by one of two specialized branches:
 
 \begin{figure}[h]
   \centering
-  \fbox{
-    \parbox{0.9\linewidth}{
-      \centering
-      Placeholder for medical VQA system architecture flowchart.
-    }
-  }
+  \includegraphics[width=0.9\linewidth]{figures/pipeline.png}
   \caption{Medical VQA system architecture flowchart.}
   \label{fig:system_flowchart}
 \end{figure}
@@ -552,12 +540,7 @@ The output of the vision stream (a 512-dimensional vector) and the language stre
 
 \begin{figure}[h]
   \centering
-  \fbox{
-    \parbox{0.9\linewidth}{
-      \centering
-      Placeholder for multimodal fusion architecture diagram.
-    }
-  }
+  \includegraphics[width=0.9\linewidth]{figures/fusion_architecture.png}
   \caption{Detailed schematic of the multimodal fusion architecture showing the integration of ResNet-18 visual features and BioBERT textual embeddings.}
   \label{fig:fusion_arch}
 \end{figure}
@@ -567,16 +550,11 @@ The output of the vision stream (a 512-dimensional vector) and the language stre
 We monitored the training process using Binary Cross-Entropy (BCE) loss and validation accuracy. The multimodal fusion models exhibited significantly more stable convergence compared to the image-only baselines. We observe that while the ResNet-18 baseline tended to fluctuate during the early epochs due to the high variability in medical imaging modalities, the inclusion of BioBERT embeddings acted as a regularizer, providing a consistent "semantic signal" that guided the visual encoder toward relevant features.
 
 Our best-performing model reached peak validation accuracy at epoch 23. To prevent overfitting on the small binary subset, we employed early stopping with a patience of 7 epochs and a learning rate scheduler that reduced the rate by half upon plateaus. The narrow gap between training and validation accuracy in Figure~\ref{fig:curves} confirms the effectiveness of our dropout and weight decay strategies.
-
 \begin{figure}[h]
   \centering
-  \fbox{
-    \parbox{0.9\linewidth}{
-      \centering
-      Placeholder for training and validation curves.
-    }
-  }
-  \caption{Training and validation loss (left) and accuracy (right) for the ResNet-18 + BioBERT fusion model. The convergence patterns indicate stable learning and effective regularization.}
+  \includegraphics[width=0.48\linewidth]{figures/loss_curve.png}
+  \includegraphics[width=0.48\linewidth]{figures/accuracy_curve.png}
+  \caption{Training and validation loss (left) and accuracy (right) for the ResNet-18 + BioBERT fusion model.}
   \label{fig:curves}
 \end{figure}
 
