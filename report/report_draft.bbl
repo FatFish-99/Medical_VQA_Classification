@@ -1,0 +1,53 @@
+\begin{thebibliography}{10}
+
+\bibitem{devlin2018bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language understanding.
+\newblock In {\em Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)}, pages 4171--4186, 2019.
+
+\bibitem{goyal2017making}
+Yash Goyal, Tejas Khot, Douglas Summers-Stay, Dhruv Batra, and Devi Parikh.
+\newblock Making the {V} in {VQA} matter: Elevating the role of image understanding in visual question answering.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pages 6904--6913, 2017.
+
+\bibitem{he2016resnet}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2016.
+
+\bibitem{lau2018dataset}
+Jason~J Lau, Soumya Gayen, Asma Ben~Abacha, and Dina Demner-Fushman.
+\newblock A dataset of clinically generated visual questions and answers about radiology images.
+\newblock {\em Scientific Data}, 5(1):1--10, 2018.
+
+\bibitem{lee2020biobert}
+Jinhyuk Lee, Wonjin Yoon, Sungdong Kim, et~al.
+\newblock Biobert: a pre-trained biomedical language representation model for biomedical text mining.
+\newblock {\em Bioinformatics}, 36(4):1234--1240, 2020.
+
+\bibitem{li2022blip}
+Junnan Li, Dongxu Li, Caiming Xiong, and Steven Hoi.
+\newblock {BLIP}: Bootstrapping language-image pre-training for unified vision-language understanding and generation.
+\newblock In {\em International Conference on Machine Learning (ICML)}, pages 12888--12900, 2022.
+
+\bibitem{liu2021slake}
+Bo~Liu, Li-Ming Zhan, Li~Xu, Lin Ma, Yan Yang, and Xiao-Ming Wu.
+\newblock {SLAKE}: A semantically-labeled knowledge-enhanced dataset for medical visual question answering.
+\newblock In {\em IEEE 18th International Symposium on Biomedical Imaging (ISBI)}, pages 1650--1654, 2021.
+
+\bibitem{radford2021clip}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, et~al.
+\newblock Learning transferable visual models from natural language supervision.
+\newblock In {\em International Conference on Machine Learning (ICML)}, 2021.
+
+\bibitem{robailleo2024}
+Robailleo.
+\newblock Medical vision {LLM} dataset.
+\newblock HuggingFace Datasets. \url{https://huggingface.co/datasets/robailleo/medical-vision-llm-dataset}, 2024.
+
+\bibitem{zhang2020bertscore}
+Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian~Q. Weinberger, and Yoav Artzi.
+\newblock {BERTScore}: Evaluating text generation with {BERT}.
+\newblock In {\em International Conference on Learning Representations (ICLR)}, 2020.
+
+\end{thebibliography}
