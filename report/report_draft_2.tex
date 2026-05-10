@@ -133,7 +133,7 @@ head (408), extremities (125), spine (119), and pelvis (99).
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/sample_images.png}
+    \includegraphics[width=0.6\textwidth]{figures/sample_images.png}
     \caption{Example medical images from the dataset. The dataset includes multiple medical imaging modalities such as X-ray, CT, MRI, and ultrasound.}
     \label{fig:sample-images}
 \end{figure}
@@ -298,6 +298,15 @@ BERTScore~\cite{zhang2020bertscore}.
     \bottomrule
   \end{tabular}
 \end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\linewidth]{figures/roc_curve.png}
+  \caption{ROC curves for all binary VQA models. The fine-tuned BioBERT
+           fusion (AUC\,=\,0.8281) consistently outperforms the vision-only
+           ResNet-18 baseline (AUC\,=\,0.7740) and text-only baselines.}
+  \label{fig:roc}
+\end{figure}
 
 Results show a clear progression from text-only baselines to multimodal fusion.
 Moving from ResNet-18 alone (72.63\%) to CLIP fusion (+3.16 pp) confirms that
